@@ -17,38 +17,6 @@
             endingLineNumber = "25"
             landmarkName = "tabBarThree(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DummyProject.ViewController.tabBarThree(Any) -&gt; ()"
-                  moduleName = "DummyProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Documents/Diksha%20Sharma/DummyProject/DummyProject/ViewController.swift"
-                  timestampString = "558518451.340461"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "21">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DummyProject.ViewController.tabBarThree(Any) -&gt; ()"
-                  moduleName = "DummyProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/apple/Documents/Diksha%20Sharma/DummyProject/DummyProject/ViewController.swift"
-                  timestampString = "558518451.348735"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "531">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

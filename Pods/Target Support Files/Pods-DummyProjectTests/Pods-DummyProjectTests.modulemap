@@ -1,6 +1,0 @@
-framework module Pods_DummyProjectTests {
-  umbrella header "Pods-DummyProjectTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
