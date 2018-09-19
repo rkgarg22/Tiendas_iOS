@@ -1,15 +1,12 @@
-//
-//  ListInMapViewVC.swift
-//  Tiendas
-//
-//  Created by apple on 18/09/18.
-//  Copyright © 2018 Apple. All rights reserved.
-//
+
 
 import UIKit
+import GoogleMaps
 
 class ListInMapViewVC: UIViewController {
+    
 
+    @IBOutlet weak var mapView: GMSMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

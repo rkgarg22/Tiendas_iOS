@@ -1,20 +1,49 @@
-//
-//  StoreListVC.swift
-//  Tiendas
-//
-//  Created by apple on 18/09/18.
-//  Copyright © 2018 Apple. All rights reserved.
-//
 
 import UIKit
 
 class StoreListVC: UIViewController {
 
+    @IBOutlet weak var backButtonPosition: NSLayoutConstraint!
+    @IBOutlet weak var storeListTableView: UITableView!
+    var controllerView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self .setupTrackMapView()
     }
  
+    //MARK:- Button's Action
+    @IBAction func backAction(_ sender: Any)
+    {
+        showTrackView(hidestatus: true)
+    }
+    //MARK:- Helping Methpd's
+    func setupTrackMapView()
+    {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "ListInMapViewVC")
+        addChildViewController(controller!)
+        controllerView =  (controller?.view)!
+        controllerView.frame = CGRect(x: self.view.frame.size.width+20, y: 0, width:self.view.frame.size.width , height: self.view.frame.size.height)
+        view.addSubview((controller?.view)!)
+        controller?.didMove(toParentViewController: self)
+    }
+    
+    func showTrackView(hidestatus:Bool)
+    {
+        if ( hidestatus == true)
+        {
+            UIView .animate(withDuration: 0.3, animations: {
+                self.backButtonPosition.constant = -30; self.controllerView.frame = CGRect(x: self.view.frame.size.width+20, y: 0, width:self.view.frame.size.width , height: self.view.frame.size.height)
+            })
+        }
+        else
+        {
+             UIView .animate(withDuration: 0.3, animations: {
+                self.backButtonPosition.constant = 12; self.controllerView.frame = CGRect(x: 0, y:30, width:self.view.frame.size.width , height: self.view.frame.size.height)
+ })
+    }
+    }
+    
 }
 
 //MARK:- TableView Datasource and AppDelegate
@@ -33,6 +62,9 @@ extension StoreListVC : UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showTrackView(hidestatus: false)
     }
     
 }

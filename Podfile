@@ -9,9 +9,11 @@ target 'Tiendas' do
   pod 'Alamofire'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'Google'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+
   target 'TiendasTests' do
-
-
     inherit! :search_paths
     # Pods for testing
   end

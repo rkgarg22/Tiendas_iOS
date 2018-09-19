@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		186A399421503ADD00A366E5 /* StoreListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186A399321503ADD00A366E5 /* StoreListVC.swift */; };
 		186A399621503FC900A366E5 /* ListInMapViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186A399521503FC900A366E5 /* ListInMapViewVC.swift */; };
+		186BCE0D2152B9F1007D815C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BCE0C2152B9F1007D815C /* HomeVC.swift */; };
+		186BCE0F2152D029007D815C /* UIViewCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BCE0E2152D028007D815C /* UIViewCustomClass.swift */; };
+		186BCE112152E79D007D815C /* TiendasVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BCE102152E79D007D815C /* TiendasVc.swift */; };
+		18895DDD21519BE300C01BBA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18895DDC21519BE300C01BBA /* Constant.swift */; };
 		18E5E5AF214A477D001E35CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5E5AE214A477D001E35CA /* AppDelegate.swift */; };
 		18E5E5B1214A477D001E35CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5E5B0214A477D001E35CA /* ViewController.swift */; };
 		18E5E5B4214A477D001E35CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E5E5B2214A477D001E35CA /* Main.storyboard */; };
@@ -24,7 +28,6 @@
 		18E5E5ED214A551B001E35CA /* UIImageViewCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5E5E5214A551A001E35CA /* UIImageViewCustomClass.swift */; };
 		18E5E5EE214A551B001E35CA /* UIButtonFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5E5E6214A551A001E35CA /* UIButtonFontSize.swift */; };
 		18E5E5EF214A551B001E35CA /* UIButtonCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5E5E7214A551A001E35CA /* UIButtonCustomClass.swift */; };
-		18E5E5F0214A551B001E35CA /* UIViewCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5E5E8214A551A001E35CA /* UIViewCustomClass.swift */; };
 		18E5E5F1214A551B001E35CA /* UITextFieldFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5E5E9214A551A001E35CA /* UITextFieldFontSize.swift */; };
 		18E5E5F2214A551B001E35CA /* UILabelCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5E5EA214A551A001E35CA /* UILabelCustomClass.swift */; };
 		5D2C7934288542829EC42FFA /* Pods_TiendasTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897BDA2266BFDA92319BC4A2 /* Pods_TiendasTests.framework */; };
@@ -52,6 +55,10 @@
 /* Begin PBXFileReference section */
 		186A399321503ADD00A366E5 /* StoreListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListVC.swift; sourceTree = "<group>"; };
 		186A399521503FC900A366E5 /* ListInMapViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInMapViewVC.swift; sourceTree = "<group>"; };
+		186BCE0C2152B9F1007D815C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		186BCE0E2152D028007D815C /* UIViewCustomClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCustomClass.swift; sourceTree = "<group>"; };
+		186BCE102152E79D007D815C /* TiendasVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiendasVc.swift; sourceTree = "<group>"; };
+		18895DDC21519BE300C01BBA /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		18E5E5AB214A477D001E35CA /* Tiendas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiendas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E5E5AE214A477D001E35CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18E5E5B0214A477D001E35CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +80,6 @@
 		18E5E5E5214A551A001E35CA /* UIImageViewCustomClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewCustomClass.swift; sourceTree = "<group>"; };
 		18E5E5E6214A551A001E35CA /* UIButtonFontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonFontSize.swift; sourceTree = "<group>"; };
 		18E5E5E7214A551A001E35CA /* UIButtonCustomClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonCustomClass.swift; sourceTree = "<group>"; };
-		18E5E5E8214A551A001E35CA /* UIViewCustomClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCustomClass.swift; sourceTree = "<group>"; };
 		18E5E5E9214A551A001E35CA /* UITextFieldFontSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldFontSize.swift; sourceTree = "<group>"; };
 		18E5E5EA214A551A001E35CA /* UILabelCustomClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelCustomClass.swift; sourceTree = "<group>"; };
 		284F0CBE857F08BC819CC5CC /* Pods-DummyProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DummyProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DummyProjectTests/Pods-DummyProjectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +146,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		18895DDB21519B2C00C01BBA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				18895DDC21519BE300C01BBA /* Constant.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		18E5E5A2214A477D001E35CA = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +180,7 @@
 		18E5E5AD214A477D001E35CA /* TiendasProject */ = {
 			isa = PBXGroup;
 			children = (
+				18895DDB21519B2C00C01BBA /* Utilities */,
 				18E5E5F3214A5521001E35CA /* ViewController */,
 				18E5E5E2214A54FA001E35CA /* CustomClasses */,
 				18E5E5AE214A477D001E35CA /* AppDelegate.swift */,
@@ -201,12 +216,12 @@
 			children = (
 				18E5E5E7214A551A001E35CA /* UIButtonCustomClass.swift */,
 				18E5E5E6214A551A001E35CA /* UIButtonFontSize.swift */,
+				186BCE0E2152D028007D815C /* UIViewCustomClass.swift */,
 				18E5E5E5214A551A001E35CA /* UIImageViewCustomClass.swift */,
 				18E5E5EA214A551A001E35CA /* UILabelCustomClass.swift */,
 				18E5E5E3214A5519001E35CA /* UILabelFontSize.swift */,
 				18E5E5E4214A5519001E35CA /* UITextFieldCustomClass.swift */,
 				18E5E5E9214A551A001E35CA /* UITextFieldFontSize.swift */,
-				18E5E5E8214A551A001E35CA /* UIViewCustomClass.swift */,
 			);
 			path = CustomClasses;
 			sourceTree = "<group>";
@@ -218,6 +233,8 @@
 				18E5E5DC214A4A5B001E35CA /* TabBArVC.swift */,
 				186A399321503ADD00A366E5 /* StoreListVC.swift */,
 				186A399521503FC900A366E5 /* ListInMapViewVC.swift */,
+				186BCE0C2152B9F1007D815C /* HomeVC.swift */,
+				186BCE102152E79D007D815C /* TiendasVc.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -244,6 +261,7 @@
 				18E5E5A8214A477D001E35CA /* Frameworks */,
 				18E5E5A9214A477D001E35CA /* Resources */,
 				773CE930A1AB49A670B03232 /* [CP] Embed Pods Frameworks */,
+				CE71741A466E631B90CA8F79 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -390,16 +408,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tiendas/Pods-Tiendas-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -422,6 +438,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE71741A466E631B90CA8F79 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tiendas/Pods-Tiendas-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tiendas/Pods-Tiendas-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FE8F0E2981B38FD360EA7C65 /* [CP] Check Pods Manifest.lock */ = {
@@ -449,18 +485,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186BCE112152E79D007D815C /* TiendasVc.swift in Sources */,
 				18E5E5B1214A477D001E35CA /* ViewController.swift in Sources */,
 				18E5E5EC214A551B001E35CA /* UITextFieldCustomClass.swift in Sources */,
+				18895DDD21519BE300C01BBA /* Constant.swift in Sources */,
 				18E5E5F2214A551B001E35CA /* UILabelCustomClass.swift in Sources */,
 				186A399421503ADD00A366E5 /* StoreListVC.swift in Sources */,
 				18E5E5F1214A551B001E35CA /* UITextFieldFontSize.swift in Sources */,
 				18E5E5AF214A477D001E35CA /* AppDelegate.swift in Sources */,
 				18E5E5E1214A525B001E35CA /* AlamofireWrapper.swift in Sources */,
 				18E5E5EF214A551B001E35CA /* UIButtonCustomClass.swift in Sources */,
+				186BCE0D2152B9F1007D815C /* HomeVC.swift in Sources */,
 				18E5E5DD214A4A5B001E35CA /* TabBArVC.swift in Sources */,
 				18E5E5EE214A551B001E35CA /* UIButtonFontSize.swift in Sources */,
+				186BCE0F2152D029007D815C /* UIViewCustomClass.swift in Sources */,
 				18E5E5EB214A551B001E35CA /* UILabelFontSize.swift in Sources */,
-				18E5E5F0214A551B001E35CA /* UIViewCustomClass.swift in Sources */,
 				18E5E5ED214A551B001E35CA /* UIImageViewCustomClass.swift in Sources */,
 				186A399621503FC900A366E5 /* ListInMapViewVC.swift in Sources */,
 			);
@@ -568,7 +607,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -622,7 +661,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -639,6 +678,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 854539W674;
 				INFOPLIST_FILE = TiendasProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -658,6 +698,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 854539W674;
 				INFOPLIST_FILE = TiendasProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
