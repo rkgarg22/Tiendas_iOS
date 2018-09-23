@@ -12,6 +12,8 @@ target 'Tiendas' do
   pod 'Google'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'FontAwesome.swift'
+
 
   target 'TiendasTests' do
     inherit! :search_paths

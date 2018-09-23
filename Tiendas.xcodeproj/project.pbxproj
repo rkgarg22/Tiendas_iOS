@@ -12,6 +12,10 @@
 		186BCE0D2152B9F1007D815C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BCE0C2152B9F1007D815C /* HomeVC.swift */; };
 		186BCE0F2152D029007D815C /* UIViewCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BCE0E2152D028007D815C /* UIViewCustomClass.swift */; };
 		186BCE112152E79D007D815C /* TiendasVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BCE102152E79D007D815C /* TiendasVc.swift */; };
+		18870A08215813A5007648A9 /* TiendasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18870A07215813A5007648A9 /* TiendasTableViewCell.swift */; };
+		18870A0A215813E0007648A9 /* TiendasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18870A09215813E0007648A9 /* TiendasCollectionViewCell.swift */; };
+		18870A0C21582164007648A9 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18870A0B21582163007648A9 /* HeaderView.xib */; };
+		18870A0E21582177007648A9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18870A0D21582176007648A9 /* HeaderView.swift */; };
 		18895DDD21519BE300C01BBA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18895DDC21519BE300C01BBA /* Constant.swift */; };
 		18E5E5AF214A477D001E35CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5E5AE214A477D001E35CA /* AppDelegate.swift */; };
 		18E5E5B1214A477D001E35CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5E5B0214A477D001E35CA /* ViewController.swift */; };
@@ -58,6 +62,10 @@
 		186BCE0C2152B9F1007D815C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		186BCE0E2152D028007D815C /* UIViewCustomClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCustomClass.swift; sourceTree = "<group>"; };
 		186BCE102152E79D007D815C /* TiendasVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiendasVc.swift; sourceTree = "<group>"; };
+		18870A07215813A5007648A9 /* TiendasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiendasTableViewCell.swift; sourceTree = "<group>"; };
+		18870A09215813E0007648A9 /* TiendasCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TiendasCollectionViewCell.swift; sourceTree = "<group>"; };
+		18870A0B21582163007648A9 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		18870A0D21582176007648A9 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		18895DDC21519BE300C01BBA /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		18E5E5AB214A477D001E35CA /* Tiendas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiendas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E5E5AE214A477D001E35CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +154,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		18870A0621581368007648A9 /* CellClasses */ = {
+			isa = PBXGroup;
+			children = (
+				18870A07215813A5007648A9 /* TiendasTableViewCell.swift */,
+				18870A09215813E0007648A9 /* TiendasCollectionViewCell.swift */,
+			);
+			path = CellClasses;
+			sourceTree = "<group>";
+		};
 		18895DDB21519B2C00C01BBA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +197,7 @@
 		18E5E5AD214A477D001E35CA /* TiendasProject */ = {
 			isa = PBXGroup;
 			children = (
+				18870A0621581368007648A9 /* CellClasses */,
 				18895DDB21519B2C00C01BBA /* Utilities */,
 				18E5E5F3214A5521001E35CA /* ViewController */,
 				18E5E5E2214A54FA001E35CA /* CustomClasses */,
@@ -231,6 +249,8 @@
 			children = (
 				18E5E5B0214A477D001E35CA /* ViewController.swift */,
 				18E5E5DC214A4A5B001E35CA /* TabBArVC.swift */,
+				18870A0D21582176007648A9 /* HeaderView.swift */,
+				18870A0B21582163007648A9 /* HeaderView.xib */,
 				186A399321503ADD00A366E5 /* StoreListVC.swift */,
 				186A399521503FC900A366E5 /* ListInMapViewVC.swift */,
 				186BCE0C2152B9F1007D815C /* HomeVC.swift */,
@@ -359,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E5E5B9214A4780001E35CA /* LaunchScreen.storyboard in Resources */,
+				18870A0C21582164007648A9 /* HeaderView.xib in Resources */,
 				18E5E5B6214A4780001E35CA /* Assets.xcassets in Resources */,
 				18E5E5DF214A4F8B001E35CA /* GoogleService-Info.plist in Resources */,
 				18E5E5B4214A477D001E35CA /* Main.storyboard in Resources */,
@@ -408,12 +429,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tiendas/Pods-Tiendas-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 			);
@@ -489,15 +512,18 @@
 				18E5E5B1214A477D001E35CA /* ViewController.swift in Sources */,
 				18E5E5EC214A551B001E35CA /* UITextFieldCustomClass.swift in Sources */,
 				18895DDD21519BE300C01BBA /* Constant.swift in Sources */,
+				18870A0A215813E0007648A9 /* TiendasCollectionViewCell.swift in Sources */,
 				18E5E5F2214A551B001E35CA /* UILabelCustomClass.swift in Sources */,
 				186A399421503ADD00A366E5 /* StoreListVC.swift in Sources */,
 				18E5E5F1214A551B001E35CA /* UITextFieldFontSize.swift in Sources */,
 				18E5E5AF214A477D001E35CA /* AppDelegate.swift in Sources */,
+				18870A08215813A5007648A9 /* TiendasTableViewCell.swift in Sources */,
 				18E5E5E1214A525B001E35CA /* AlamofireWrapper.swift in Sources */,
 				18E5E5EF214A551B001E35CA /* UIButtonCustomClass.swift in Sources */,
 				186BCE0D2152B9F1007D815C /* HomeVC.swift in Sources */,
 				18E5E5DD214A4A5B001E35CA /* TabBArVC.swift in Sources */,
 				18E5E5EE214A551B001E35CA /* UIButtonFontSize.swift in Sources */,
+				18870A0E21582177007648A9 /* HeaderView.swift in Sources */,
 				186BCE0F2152D029007D815C /* UIViewCustomClass.swift in Sources */,
 				18E5E5EB214A551B001E35CA /* UILabelFontSize.swift in Sources */,
 				18E5E5ED214A551B001E35CA /* UIImageViewCustomClass.swift in Sources */,
@@ -676,7 +702,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 854539W674;
+				DEVELOPMENT_TEAM = 7Z5AQZ8848;
 				INFOPLIST_FILE = TiendasProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -696,7 +722,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 854539W674;
+				DEVELOPMENT_TEAM = 7Z5AQZ8848;
 				INFOPLIST_FILE = TiendasProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

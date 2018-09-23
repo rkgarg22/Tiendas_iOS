@@ -19,6 +19,7 @@ PODS:
     - FirebaseInstanceID (~> 1.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
+  - FontAwesome.swift (1.4.4)
   - Google (3.1.0):
     - Google/Core (= 3.1.0)
   - Google/Core (3.1.0):
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - Alamofire
   - Firebase/Core
   - Firebase/Messaging
+  - FontAwesome.swift
   - Google
   - GoogleMaps
   - GooglePlaces
@@ -53,6 +55,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseInstanceID
     - FirebaseMessaging
+    - FontAwesome.swift
     - Google
     - GoogleMaps
     - GooglePlaces
@@ -66,12 +69,13 @@ SPEC CHECKSUMS:
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
   FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   FirebaseMessaging: 753d05a925e9eb8eadd09a0ffc9b808578b72fac
+  FontAwesome.swift: 17b93524b9f61136a8566344517b8556ed584e87
   Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
 
-PODFILE CHECKSUM: 198671344e550a09f7fe5c660b582d4c88615929
+PODFILE CHECKSUM: 9f4970e435beb607b36ff98ba38f5b69ba46a54f
 
 COCOAPODS: 1.5.3

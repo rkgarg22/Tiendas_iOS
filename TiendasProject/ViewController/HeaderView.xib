@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HeaderView" customModule="Tiendas" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zxX-AD-sJJ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="callle 2s #50F-38/MAdelline,Antiquia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gja-W9-OJ5">
+                    <rect key="frame" x="10" y="40" width="215.5" height="23"/>
+                    <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="13"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightarrow" translatesAutoresizingMaskIntoConstraints="NO" id="VQx-fx-UzT">
+                    <rect key="frame" x="334" y="26" width="21" height="21"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="D1 Cristo REy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbf-zL-uEP">
+                    <rect key="frame" x="10" y="10" width="314" height="20"/>
+                    <fontDescription key="fontDescription" name="GurmukhiMN-Bold" family="Gurmukhi MN" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="zxX-AD-sJJ" secondAttribute="bottom" id="0Nm-i4-lGO"/>
+                <constraint firstAttribute="trailing" secondItem="zxX-AD-sJJ" secondAttribute="trailing" id="7qU-rk-uLf"/>
+                <constraint firstItem="Kbf-zL-uEP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="BGh-o7-KTJ"/>
+                <constraint firstItem="gja-W9-OJ5" firstAttribute="leading" secondItem="Kbf-zL-uEP" secondAttribute="leading" id="DAU-kU-wOp"/>
+                <constraint firstItem="Kbf-zL-uEP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="E5Z-yn-sor"/>
+                <constraint firstAttribute="bottom" secondItem="gja-W9-OJ5" secondAttribute="bottom" constant="10" id="MvU-Ln-K3P"/>
+                <constraint firstItem="VQx-fx-UzT" firstAttribute="centerY" secondItem="zxX-AD-sJJ" secondAttribute="centerY" id="Na5-pZ-d2S"/>
+                <constraint firstAttribute="trailing" secondItem="VQx-fx-UzT" secondAttribute="trailing" constant="20" id="OfC-7i-ean"/>
+                <constraint firstItem="zxX-AD-sJJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bUN-hF-hQv"/>
+                <constraint firstItem="gja-W9-OJ5" firstAttribute="top" secondItem="Kbf-zL-uEP" secondAttribute="bottom" constant="10" id="dJg-h0-psO"/>
+                <constraint firstItem="VQx-fx-UzT" firstAttribute="leading" secondItem="Kbf-zL-uEP" secondAttribute="trailing" constant="10" id="dVK-Ao-b5w"/>
+                <constraint firstItem="zxX-AD-sJJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qmz-VX-4EC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="arrowDown" destination="VQx-fx-UzT" id="HZf-b3-GBm"/>
+            </connections>
+            <point key="canvasLocation" x="24.5" y="40.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="rightarrow" width="21" height="21"/>
+    </resources>
+</document>
