@@ -14,10 +14,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zxX-AD-sJJ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="callle 2s #50F-38/MAdelline,Antiquia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gja-W9-OJ5">
                     <rect key="frame" x="10" y="40" width="215.5" height="23"/>
                     <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="13"/>
@@ -36,22 +32,20 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="zxX-AD-sJJ" secondAttribute="bottom" id="0Nm-i4-lGO"/>
-                <constraint firstAttribute="trailing" secondItem="zxX-AD-sJJ" secondAttribute="trailing" id="7qU-rk-uLf"/>
                 <constraint firstItem="Kbf-zL-uEP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="BGh-o7-KTJ"/>
                 <constraint firstItem="gja-W9-OJ5" firstAttribute="leading" secondItem="Kbf-zL-uEP" secondAttribute="leading" id="DAU-kU-wOp"/>
                 <constraint firstItem="Kbf-zL-uEP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="E5Z-yn-sor"/>
                 <constraint firstAttribute="bottom" secondItem="gja-W9-OJ5" secondAttribute="bottom" constant="10" id="MvU-Ln-K3P"/>
-                <constraint firstItem="VQx-fx-UzT" firstAttribute="centerY" secondItem="zxX-AD-sJJ" secondAttribute="centerY" id="Na5-pZ-d2S"/>
                 <constraint firstAttribute="trailing" secondItem="VQx-fx-UzT" secondAttribute="trailing" constant="20" id="OfC-7i-ean"/>
-                <constraint firstItem="zxX-AD-sJJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bUN-hF-hQv"/>
                 <constraint firstItem="gja-W9-OJ5" firstAttribute="top" secondItem="Kbf-zL-uEP" secondAttribute="bottom" constant="10" id="dJg-h0-psO"/>
                 <constraint firstItem="VQx-fx-UzT" firstAttribute="leading" secondItem="Kbf-zL-uEP" secondAttribute="trailing" constant="10" id="dVK-Ao-b5w"/>
-                <constraint firstItem="zxX-AD-sJJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qmz-VX-4EC"/>
+                <constraint firstItem="VQx-fx-UzT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="iBM-L3-tHc"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="arrowDown" destination="VQx-fx-UzT" id="HZf-b3-GBm"/>
+                <outlet property="arrowDown" destination="VQx-fx-UzT" id="LUC-H3-Bzk"/>
+                <outlet property="headerDescription" destination="gja-W9-OJ5" id="0mT-T6-pLF"/>
+                <outlet property="titleLabel" destination="Kbf-zL-uEP" id="0DK-Ya-vCI"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="40.5"/>
         </view>

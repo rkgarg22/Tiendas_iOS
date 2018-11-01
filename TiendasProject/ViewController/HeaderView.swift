@@ -7,7 +7,9 @@ protocol HeaderViewDelegate: class {
 class HeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var arrowDown: UIImageView!
     @IBOutlet weak var titleLabel: UILabel?
-    @IBOutlet weak var arrowLabel: UILabel?
+    
+    @IBOutlet weak var headerDescription: UILabel!
+  
     var section: Int = 0
     weak var delegate: HeaderViewDelegate?
     static var nib:UINib {

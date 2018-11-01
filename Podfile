@@ -12,7 +12,9 @@ target 'Tiendas' do
   pod 'Google'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'FontAwesome.swift'
+  pod 'NVActivityIndicatorView'
+  pod 'SDWebImage', '~> 4.0'
+
 
 
   target 'TiendasTests' do

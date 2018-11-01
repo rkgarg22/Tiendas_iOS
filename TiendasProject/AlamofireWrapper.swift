@@ -11,6 +11,8 @@ import Alamofire
 
 let baseUrl = ""
 class AlamofireWrapper: NSObject {
+    
+    
     //MARK:- Create singleton object
     class var sharedInstance: AlamofireWrapper
     {

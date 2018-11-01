@@ -5,16 +5,36 @@ import Firebase
 import UserNotifications
 import GoogleMaps
 import GooglePlaces
+import NVActivityIndicatorView
+import Alamofire
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate,CLLocationManagerDelegate {
+    
+    var isConnectedToNetwork = false
+    let manager = NetworkReachabilityManager(host: "www.apple.com")
+    var nibContents = Bundle.main.loadNibNamed("activityIndicatorView", owner: nil, options: nil)
     var window: UIWindow?
-let gcmMessageIDKey = "gcm.message_id"
-
+    var selectedTab:Int = 0
+    let locationManager = CLLocationManager()
+    var latitude:Double = 0
+    var longitude:Double = 0
+    let gcmMessageIDKey = "gcm.message_id"
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: .selected)
+UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor(red: 138/255.0, green: 138/255.0, blue: 138/255.0, alpha: 1.0)], for: .selected)
+        manager?.listener = { status in
+            print("Network Status Changed: \(status)")
+            if String(describing: status) == "notReachable"{
+                self.isConnectedToNetwork = false
+            }
+            else{
+                self.isConnectedToNetwork = true
+            }
+        }
+        manager?.startListening()
+      
         
+          fetchCurrentLocation()
         //MARK:- Google MAP
         GMSServices.provideAPIKey(googleAPI)
         GMSPlacesClient.provideAPIKey(googleAPI)
@@ -65,21 +85,37 @@ UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregrou
         // Override point for customization after application launch.
         return true
     }
-    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error \(error)")
+    }
     @objc func tokenRefreshNotification(_ notification: Notification) {
         if let refreshedToken = FIRInstanceID.instanceID().token() {
             print("InstanceID token: \(refreshedToken)")
             
             userDefault.set(refreshedToken, forKey: USER_DEFAULT_FireBaseToken)
-            
-            let loginCheck = userDefault.bool(forKey: USER_DEFAULT_LOGIN_CHECK_Key)
-            if(loginCheck){
-                //hitRegisterTokenApi(token: refreshedToken)
-            }
+        
         }
         
         // Connect to FCM since connection may have failed when attempted before having a token.
         connectToFcm()
+    }
+    
+    //Fetch Current Location
+    // MARK: Fetching User Location
+    func fetchCurrentLocation(){
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+        locationManager.stopUpdatingLocation()
+        locationManager.delegate = nil
+        let latestLocation = locations.last!
+        print(latestLocation)
+        applicationDelegate.latitude = latestLocation.coordinate.latitude
+        applicationDelegate.longitude = latestLocation.coordinate.longitude
     }
     // [START connect_to_fcm]
     func connectToFcm() {
@@ -181,4 +217,21 @@ extension AppDelegate : FIRMessagingDelegate {
         
     }
 
+}
+extension AppDelegate
+{
+    func showActivityIndicatorView(){
+        let nibMainview = nibContents![0] as! UIView
+        nibMainview.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
+        let activityIndicator = (nibMainview.viewWithTag(1)! as! NVActivityIndicatorView)
+        activityIndicator.startAnimating()
+        self.window?.rootViewController?.view.addSubview(nibMainview)
+        nibMainview.center = (self.window?.rootViewController?.view.center)!
+        UIApplication.shared.beginIgnoringInteractionEvents()
+    }
+    func hideActivityIndicatorView(){
+        let nibMainview = nibContents![0] as! UIView
+        nibMainview.removeFromSuperview()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
 }

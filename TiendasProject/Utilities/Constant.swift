@@ -5,43 +5,21 @@ import UIKit
 
 let googleAPI = "AIzaSyDP7zkzOWlvtKj9g5yTnyx78CLkJydl_oQ"
 
+let ServiceURL = "http://ec2-18-221-191-16.us-east-2.compute.amazonaws.com/api/"
+let listWebservice = "listing/?"
 
-// MARK: userDefault
+
+let appName = "Tiendas"
+let connectivityMessage = "La conexión a Internet parece estar fuera de línea"
+let selectColor: UIColor = UIColor(red: 74/255.0, green: 100/255.0, blue: 114/255.0, alpha: 1.0)
+
+let unselectColor: UIColor = UIColor(red: 1/255.0, green: 90/255.0, blue: 158/255.0, alpha: 1.0)
+
+let selectTextColor: UIColor = UIColor(red: 97/255.0, green: 117/255.0, blue: 123/255.0, alpha: 1.0)
+let polylineColor: UIColor = UIColor(red: 192/255.0, green: 77/255.0, blue: 76/255.0, alpha: 1.0)
+
 let userDefault = UserDefaults.standard
-let USER_DEFAULT_userId_Key = "userID"
-let USER_DEFAULT_emailId_Key = "emailID"
-let USER_DEFAULT_firstName_Key = "firstName"
-let USER_DEFAULT_lastName_Key = "lastName"
-let USER_DEFAULT_LOGIN_CHECK_Key = "Login"
 let USER_DEFAULT_FireBaseToken = "fireBaseTokenId"
-let USER_DEFAULT_PushNotificationEnable_Key = "pushNotification"
-let USER_DEFAULT_LastBeacon_Key = "lastBeacon"
-let USER_DEFAULT_LastDateObject_Key = "lastDateTime"
-let USER_DEFAULT_IntroVideo_Key = "introVideo"
-
-// local strings
-let signoutMessage = "Are you sure want to sign out ?"
-let alertText = "Alert"
-let yesBtnTitle = "Yes"
-let noBtnTitle = "No"
-let okBtnTitle = "OK"
-let cancelBtnTitle = "cancel"
-let successAlertTitle = "success"
-let simplyShopTitle = "Tiendas"
-let cancelButtonTitle = "cancel"
-
-
-
-
-
-func getLoginUserId() -> NSNumber {
-    let usrDefault = UserDefaults.standard
-    let usrId = usrDefault.value(forKey: USER_DEFAULT_userId_Key) as! NSNumber
-    return usrId
-}
-
-
-
 // MARK: appDelegate reference
 let applicationDelegate = UIApplication.shared.delegate as!(AppDelegate)
 
@@ -63,11 +41,7 @@ func showAlert (_ reference:UIViewController, message:String, title:String){
 
 
 
-func getLastDateObject() -> Date {
-    let usrDefault = UserDefaults.standard
-    let date = usrDefault.value(forKey: USER_DEFAULT_LastDateObject_Key) as! Date
-    return date
-}
+
 
 
 
