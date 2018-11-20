@@ -84,7 +84,7 @@ extension TiendasVc : UITableViewDelegate,UITableViewDataSource
         
         if (selectedIndex == indexPath.row)
         {
-           return 265
+           return UITableViewAutomaticDimension
         }
         else
         {
@@ -209,12 +209,12 @@ extension TiendasVc : UICollectionViewDelegate,UICollectionViewDataSource
             isdepindex = indexPath.row
         
         }
-        if (collectionView.tag == 1)
+        if (collectionView.tag == 1 && self.municipio.count>0)
         {
              self.municipio = array?.object(at: indexPath.row) as? String ?? "Data"
             ismuniindex = indexPath.row
         }
-        if (collectionView.tag == 2)
+        if (collectionView.tag == 2 && self.municipio.count>0 && self.burrioString.count > 0)
         {
              self.burrioString = array?.object(at: indexPath.row) as? String ?? "Data"
             burrio = indexPath.row

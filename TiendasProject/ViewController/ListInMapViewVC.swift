@@ -58,6 +58,8 @@ class ListInMapViewVC: UIViewController,CLLocationManagerDelegate,CustomCalloutV
 //        if let data = marker.userData! as? listModel {
 //            markerData = data
 //        }
+        if((marker.userData) != nil)
+        {
         markerData = marker.userData as! listModel
         locationMarker = marker
         infoWindow.removeFromSuperview()
@@ -78,7 +80,7 @@ class ListInMapViewVC: UIViewController,CLLocationManagerDelegate,CustomCalloutV
         infoWindow.center.y = infoWindow.center.y - 10
         infoWindow.center.x = infoWindow.center.x + 100
         self.view.addSubview(infoWindow)
-
+        }
         return false
     }
     
@@ -120,35 +122,12 @@ class ListInMapViewVC: UIViewController,CLLocationManagerDelegate,CustomCalloutV
         for model in storeListArray
         {
             let list :listModel = model as! listModel
-            let name  = list.address
-            let address =  list.address + list.city
-           
-            let geoCoder = CLGeocoder()
-             let location = CLLocation()
-            geoCoder.geocodeAddressString(address) { (placemarks, error) in
-                if (error == nil)
-                {
-            let placemarks = placemarks,
-            location = placemarks?.first?.location
-                    list.placeLocation = (placemarks?.first?.location)!;
             let marker = GMSMarker()
-            let placeLat = location?.coordinate.latitude
-            bounds = bounds.includingCoordinate(marker.position)
-            let placeLon = location?.coordinate.longitude
-        //  marker.icon = #imageLiteral(resourceName: "MapPin")
-            marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(placeLat!), longitude: CLLocationDegrees(placeLon!))
-                marker.appearAnimation = .pop
-                marker.map = self.mapView
-                    marker.icon = #imageLiteral(resourceName: "MapLogo")
-                marker.userData = list
-                }
-                    else {
-                        // handle no location found
-                        return
-                }
-                
-                // Use your location
-            }
+            marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(list.latitude)!, longitude: CLLocationDegrees(list.longitude)!)
+            marker.appearAnimation = .pop
+            marker.map = self.mapView
+            marker.icon = #imageLiteral(resourceName: "MapLogo")
+            marker.userData = list
         }
         mapView.settings.zoomGestures = true
        // mapView.animate(toViewingAngle: 45)
@@ -256,6 +235,8 @@ extension ListInMapViewVC
                         list.city = resultDic?.value(forKey: "city") as? String ?? ""
                         list.distance = resultDic?.value(forKey: "distance") as! Double
                         list.isNew = resultDic?.value(forKey: "isNew") as? String ?? ""
+                        list.latitude = resultDic?.value(forKey: "latitude") as? String ?? ""
+                        list.longitude = resultDic?.value(forKey: "longitude") as? String ?? ""
                         self.storeListArray.add(list);
                     }
                     self.loadMarkersFromDB();

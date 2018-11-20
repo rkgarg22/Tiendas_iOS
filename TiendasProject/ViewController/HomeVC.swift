@@ -48,6 +48,7 @@ class HomeVC: UIViewController
     //Mark :-
     @IBAction func listAction(_ sender: Any)
     {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "listShow"), object: nil, userInfo:nil)
         mapButton.isSelected = false;
         listButton.isSelected = true;
         let viewController = pageViewController.viewControllers?.last

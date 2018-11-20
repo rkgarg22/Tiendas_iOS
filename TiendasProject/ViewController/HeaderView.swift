@@ -28,6 +28,11 @@ class HeaderView: UITableViewHeaderFooterView {
     func setCollapsed(collapsed: Bool) {
         arrowDown?.rotate(collapsed ? 0.0 : .pi)
     }
+    
+    
+    
+  
+    
 }
 
 extension UIView {

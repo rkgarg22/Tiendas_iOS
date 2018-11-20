@@ -7,5 +7,7 @@ class listModel: NSObject {
   var city = String()
   var distance = Double()
   var isNew = String()
-var placeLocation = CLLocation()
+  var latitude = String()
+  var longitude = String()
+  var placeLocation = CLLocation()
 }

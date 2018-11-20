@@ -22,6 +22,7 @@ var isFilter = Bool()
 override func viewDidLoad() {
         super.viewDidLoad()
         self .getlistVc();
+      NotificationCenter.default.addObserver(self, selector: #selector(HomeVC.methodOfReceivedNotification(notification:)), name: Notification.Name("listShow"), object: nil)
     }
     
     @IBAction func wazeAction(_ sender: Any)
@@ -44,6 +45,19 @@ override func viewDidLoad() {
         }
         
     }
+    
+    @objc func methodOfReceivedNotification(notification: Notification)
+    {
+        UIView.transition(with: mapView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.mapView.isHidden = true
+            self.mapView .clear()
+            self.infoWindow = self.loadNiB()
+            self .setupMapView();
+        })
+    }
+    
+
+
     @IBAction func cancelAction(_ sender: Any)
     {
         UIView.animate(withDuration: 0.8, animations: {
@@ -152,6 +166,8 @@ extension StoreListVC
                         list.city = resultDic?.value(forKey: "city") as? String ?? ""
                         list.distance = resultDic?.value(forKey: "distance") as! Double
                         list.isNew = resultDic?.value(forKey: "isNew") as? String ?? ""
+                        list.latitude = resultDic?.value(forKey: "latitude") as? String ?? ""
+                         list.longitude = resultDic?.value(forKey: "longitude") as? String ?? ""
                     self.storeListArray.add(list);
                     }
                     self.storeListTableView.reloadData()
@@ -200,46 +216,25 @@ extension StoreListVC
     func setupMapView() {
         mapView.clear()
         mapView.delegate = self
+      mapView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width-5, height: self.view.frame.size.height)
         let marker = GMSMarker()
         marker.icon = #imageLiteral(resourceName: "currentloc")
         marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(applicationDelegate.latitude), longitude: CLLocationDegrees(applicationDelegate.longitude))
         marker.appearAnimation = .pop
         marker.map = self.mapView
-        mapView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
        
         //ADD DESTINATION...
-        let name  = selectedmodel.address
-        let address =  (selectedmodel.address) + (selectedmodel.city)
-        let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(address) { (placemarks, error) in
-            if (error == nil)
-            {
-                let placemarks = placemarks,
-                location = placemarks?.first?.location
-                let marker = GMSMarker()
-                let placeLat = location?.coordinate.latitude
-                self.selectedLocation = (placemarks?.first?.location)!
-                let placeLon = location?.coordinate.longitude
-                //  marker.icon = #imageLiteral(resourceName: "MapPin")
-                
-                    self.drawRoute(location: location!)
-                marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(placeLat!), longitude: CLLocationDegrees(placeLon!))
-                marker.appearAnimation = .pop
-                marker.icon = #imageLiteral(resourceName: "MapLogo")
-                marker.map = self.mapView
-                marker.userData = self.selectedmodel
-               
-            }
-            else {
-                // handle no location found
-                return
-            }
+        let marker1 = GMSMarker()
+        marker1.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(selectedmodel.latitude)!, longitude: CLLocationDegrees(selectedmodel.longitude)!)
+        marker1.appearAnimation = .pop
+        marker1.map = self.mapView
+        marker1.icon = #imageLiteral(resourceName: "MapLogo")
+        marker1.userData = self.selectedmodel
             // Use your location
-        }
          mapView.settings.zoomGestures = true
         let camera  = GMSCameraPosition.camera(withLatitude: applicationDelegate.latitude, longitude: applicationDelegate.longitude, zoom: 17)
         mapView.animate(to: camera)
-    }
+    }                                                                                                                                
 
 }
 extension StoreListVC
