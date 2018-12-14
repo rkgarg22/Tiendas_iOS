@@ -19,7 +19,7 @@ extension BannerVC  : UICollectionViewDelegate,UICollectionViewDataSource,UIColl
 {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! TiendasCollectionViewCell
-        let dict = resultArray.object(at: collectionView.tag) as? NSDictionary
+        let dict = resultArray.object(at:indexPath.row) as? NSDictionary
         let imgUrl = dict?.value(forKey:"imgUrl") as?  String
         let url = URL(string: imgUrl!)
         cell.bannerImg.sd_setImage(with: url, placeholderImage:#imageLiteral(resourceName: "logo"))
