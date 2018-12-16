@@ -32,9 +32,8 @@ extension BannerVC  : UICollectionViewDelegate,UICollectionViewDataSource,UIColl
     //MARK:- UICollectionViewDelegate protocol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        let dict = resultArray.object(at: collectionView.tag) as? NSDictionary
+        let dict = resultArray.object(at: indexPath.row) as? NSDictionary
         let Obj =  self.storyboard?.instantiateViewController(withIdentifier: "BannerDetailVC") as! BannerDetailVC
-        
         Obj.link = dict?.value(forKey:"url") as?  String
         self.navigationController?.pushViewController(Obj, animated: true)
         print("You selected cell #\(indexPath.item)!")

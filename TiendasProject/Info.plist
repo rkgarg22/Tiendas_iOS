@@ -34,11 +34,11 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Location required to see the store list near to you.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>Location required to see the store list near to you.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>Location required to see the store list near to you.</string>
 	<key>Product bundle identifier</key>
 	<string>TIENDAS D1</string>
 	<key>UILaunchStoryboardName</key>

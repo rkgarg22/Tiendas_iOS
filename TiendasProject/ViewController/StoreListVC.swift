@@ -5,24 +5,24 @@ import Alamofire
 
 class StoreListVC: UIViewController,CustomCalloutViewDelegate,GMSMapViewDelegate
 {
-@IBOutlet weak var drawRouteView: UIView!
-@IBOutlet weak var storeListTableView: UITableView!
-@IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-@IBOutlet weak var mapView: GMSMapView!
-
-@IBOutlet weak var overlayView: UIView!
-    var infoWindow = CustomCalloutView()
-fileprivate var locationMarker : GMSMarker? = GMSMarker()
-var controllerView = UIView()
-var storeListArray = NSMutableArray()
-var selectedmodel = listModel()
-var selectedLocation = CLLocation()
-var isFilter = Bool()
+    @IBOutlet weak var drawRouteView: UIView!
+    @IBOutlet weak var storeListTableView: UITableView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var mapView: GMSMapView!
     
-override func viewDidLoad() {
+    @IBOutlet weak var overlayView: UIView!
+    var infoWindow = CustomCalloutView()
+    fileprivate var locationMarker : GMSMarker? = GMSMarker()
+    var controllerView = UIView()
+    var storeListArray = NSMutableArray()
+    var selectedmodel = listModel()
+    var selectedLocation = CLLocation()
+    var isFilter = Bool()
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         self .getlistVc();
-      NotificationCenter.default.addObserver(self, selector: #selector(HomeVC.methodOfReceivedNotification(notification:)), name: Notification.Name("listShow"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(StoreListVC.methodOfReceivedNotification(notification:)), name: Notification.Name("listShow"), object: nil)
     }
     
     @IBAction func wazeAction(_ sender: Any)
@@ -56,15 +56,15 @@ override func viewDidLoad() {
         })
     }
     
-
-
+    
+    
     @IBAction func cancelAction(_ sender: Any)
     {
         UIView.animate(withDuration: 0.8, animations: {
             self.bottomConstraint.constant = -300
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "openshadow"), object: nil, userInfo: ["text": "true"])
-               // Some value
-             self.overlayView.isHidden = true
+            // Some value
+            self.overlayView.isHidden = true
             self.view.layoutIfNeeded()
         })
     }
@@ -93,12 +93,10 @@ extension StoreListVC : UITableViewDelegate,UITableViewDataSource
         cell.listTitle.text = list.title
         cell.listAddress.text = list.address
         cell.listDistance.text = String(format: "%.2f",list.distance)
-        if (list.isNew == "no")
-        {
-           cell.isnewImg.isHidden = false
+        if (list.isNew == "no"){
+            cell.isnewImg.isHidden = false
         }
-        else
-        {
+        else{
             cell.isnewImg.isHidden = true
         }
         return cell
@@ -107,7 +105,7 @@ extension StoreListVC : UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedmodel = storeListArray.object(at: indexPath.row) as! listModel
         UIView.transition(with: mapView, duration: 0.5, options: .transitionCrossDissolve, animations: {
             self.mapView.isHidden = false
@@ -126,72 +124,72 @@ extension StoreListVC
     }
     func getlistVc()
     {
-       if(applicationDelegate.isConnectedToNetwork == true)
-       {
-        self.view.endEditing(true)
-        applicationDelegate .showActivityIndicatorView()
-
-        var Urlstr = String ()
-        if (applicationDelegate.selectedTab == 1)
+        if(applicationDelegate.isConnectedToNetwork == true)
         {
-            Urlstr  = ServiceURL + "filter/?latitude=\(applicationDelegate.latitude)&longitude=\(applicationDelegate.longitude)&departmento=\(Alomafire.sharedInstance.department)&municipio=\(Alomafire.sharedInstance.municipio)&barrio=\(Alomafire.sharedInstance.burrioString)"
+            self.view.endEditing(true)
+            applicationDelegate .showActivityIndicatorView()
+            
+            var Urlstr = String ()
+            if (applicationDelegate.selectedTab == 1)
+            {
+                Urlstr  = ServiceURL + "filter/?latitude=\(applicationDelegate.latitude)&longitude=\(applicationDelegate.longitude)&departmento=\(Alomafire.sharedInstance.department)&municipio=\(Alomafire.sharedInstance.municipio)&barrio=\(Alomafire.sharedInstance.burrioString)"
+            }
+            else
+            {
+                Urlstr  = ServiceURL + "listing/?latitude=\(applicationDelegate.latitude)&longitude=\(applicationDelegate.longitude)"
+            }
+            Urlstr = Urlstr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+            Alomafire.sharedInstance.getservice(Urlstr: Urlstr)
+            { (Result, error) in
+                if ((error) != nil)
+                {
+                    applicationDelegate.hideActivityIndicatorView()
+                    let errormessage = error? .localizedDescription
+                    showAlert(self, message: errormessage!, title: appName)
+                }
+                if (error == nil)
+                {
+                    if Result?.value(forKey: "success") as! Int == 1
+                    {
+                        applicationDelegate .hideActivityIndicatorView()
+                        
+                        let result = Result?.value(forKey: "result") as! NSArray
+                        
+                        for dic in result
+                        {
+                            let resultDic = dic as? NSDictionary
+                            let list : listModel = listModel()
+                            list.title = resultDic?.value(forKey: "title") as? String ?? ""
+                            list.address = resultDic?.value(forKey: "address") as? String ?? ""
+                            list.city = resultDic?.value(forKey: "city") as? String ?? ""
+                            list.distance = resultDic?.value(forKey: "distance") as! Double
+                            list.isNew = resultDic?.value(forKey: "isNew") as? String ?? ""
+                            list.latitude = resultDic?.value(forKey: "latitude") as? String ?? ""
+                            list.longitude = resultDic?.value(forKey: "longitude") as? String ?? ""
+                            self.storeListArray.add(list);
+                        }
+                        self.storeListTableView.reloadData()
+                    }
+                    else
+                    {
+                        applicationDelegate .hideActivityIndicatorView()
+                        
+                        //self.refreshAfterloading()
+                    }
+                }
+                else {
+                    //                if (self.searchArray .count <= 0){
+                    //                    self.noPhraseFound.isHidden = false}
+                    
+                }}
         }
         else
         {
-            Urlstr  = ServiceURL + "listing/?latitude=\(applicationDelegate.latitude)&longitude=\(applicationDelegate.longitude)"
-        }
-        Urlstr = Urlstr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        Alomafire.sharedInstance.getservice(Urlstr: Urlstr)
-        { (Result, error) in
-            if ((error) != nil)
-            {
-                applicationDelegate.hideActivityIndicatorView()
-                let errormessage = error? .localizedDescription
-                showAlert(self, message: errormessage!, title: appName)
-            }
-            if (error == nil)
-            {
-                if Result?.value(forKey: "success") as! Int == 1
-                {
-            applicationDelegate .hideActivityIndicatorView()
-
-                    let result = Result?.value(forKey: "result") as! NSArray
-                    
-                    for dic in result
-                    {
-                let resultDic = dic as? NSDictionary
-                    let list : listModel = listModel()
-                        list.title = resultDic?.value(forKey: "title") as? String ?? ""
-                        list.address = resultDic?.value(forKey: "address") as? String ?? ""
-                        list.city = resultDic?.value(forKey: "city") as? String ?? ""
-                        list.distance = resultDic?.value(forKey: "distance") as! Double
-                        list.isNew = resultDic?.value(forKey: "isNew") as? String ?? ""
-                        list.latitude = resultDic?.value(forKey: "latitude") as? String ?? ""
-                         list.longitude = resultDic?.value(forKey: "longitude") as? String ?? ""
-                    self.storeListArray.add(list);
-                    }
-                    self.storeListTableView.reloadData()
-                }
-                else
-                {
-                    applicationDelegate .hideActivityIndicatorView()
-                   
-                    //self.refreshAfterloading()
-                }
-            }
-            else {
-//                if (self.searchArray .count <= 0){
-//                    self.noPhraseFound.isHidden = false}
-
-            }}
-       }
-       else
-       {
-        showAlert(self, message:connectivityMessage , title: appName)
+            showAlert(self, message:connectivityMessage , title: appName)
         }
     }
-   
-  
+    
+    
     
 }
 ///MAPView setup...
@@ -216,13 +214,13 @@ extension StoreListVC
     func setupMapView() {
         mapView.clear()
         mapView.delegate = self
-      mapView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width-5, height: self.view.frame.size.height)
+        mapView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width-5, height: self.view.frame.size.height)
         let marker = GMSMarker()
         marker.icon = #imageLiteral(resourceName: "currentloc")
         marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(applicationDelegate.latitude), longitude: CLLocationDegrees(applicationDelegate.longitude))
         marker.appearAnimation = .pop
         marker.map = self.mapView
-       
+        
         //ADD DESTINATION...
         let marker1 = GMSMarker()
         marker1.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(selectedmodel.latitude)!, longitude: CLLocationDegrees(selectedmodel.longitude)!)
@@ -230,12 +228,12 @@ extension StoreListVC
         marker1.map = self.mapView
         marker1.icon = #imageLiteral(resourceName: "MapLogo")
         marker1.userData = self.selectedmodel
-            // Use your location
-         mapView.settings.zoomGestures = true
+        // Use your location
+        mapView.settings.zoomGestures = true
         let camera  = GMSCameraPosition.camera(withLatitude: applicationDelegate.latitude, longitude: applicationDelegate.longitude, zoom: 17)
         mapView.animate(to: camera)
     }                                                                                                                                
-
+    
 }
 extension StoreListVC
 {
@@ -265,24 +263,24 @@ extension StoreListVC
                     if (routes .count > 0)
                     {
                         
-                    let dictArray = (routes["legs"] as? Array) ?? []
-                    let dict = (dictArray.first as? Dictionary<String, AnyObject>) ?? [:]
-                    let steps = (dict["steps"] as? Array) ?? []
-                    let stepsDict = (steps.first as? Dictionary<String, AnyObject>) ?? [:]
-                    
-                    let startLocation = stepsDict["start_location"]
-                    let lat = startLocation!["lat"] as! NSNumber
-                    let lng = startLocation!["lng"] as! NSNumber
-                    print("lat : \(lat) lng : \(lng)")
-                    
-                    let dotCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lng))
-                    
-                    //--------Route polypoints----------\\
-                    let overviewPolyline = (routes["overview_polyline"] as? Dictionary<String,AnyObject>) ?? [:]
-                    let polypoints = (overviewPolyline["points"] as? String) ?? ""
-                    let line  = polypoints
-                    let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-                    self.addPolyLine(encodedString: line, coordinate:coordinate , dotCoordinate:dotCoordinate)
+                        let dictArray = (routes["legs"] as? Array) ?? []
+                        let dict = (dictArray.first as? Dictionary<String, AnyObject>) ?? [:]
+                        let steps = (dict["steps"] as? Array) ?? []
+                        let stepsDict = (steps.first as? Dictionary<String, AnyObject>) ?? [:]
+                        
+                        let startLocation = stepsDict["start_location"]
+                        let lat = startLocation!["lat"] as! NSNumber
+                        let lng = startLocation!["lng"] as! NSNumber
+                        print("lat : \(lat) lng : \(lng)")
+                        
+                        let dotCoordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(lng))
+                        
+                        //--------Route polypoints----------\\
+                        let overviewPolyline = (routes["overview_polyline"] as? Dictionary<String,AnyObject>) ?? [:]
+                        let polypoints = (overviewPolyline["points"] as? String) ?? ""
+                        let line  = polypoints
+                        let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                        self.addPolyLine(encodedString: line, coordinate:coordinate , dotCoordinate:dotCoordinate)
                     }
                 }
         }
@@ -321,25 +319,25 @@ extension StoreListVC
         //        }
         if (marker.userData != nil)
         {
-        markerData = marker.userData as! listModel
-        locationMarker = marker
-        infoWindow.removeFromSuperview()
-        infoWindow = loadNiB()
-        guard let location = locationMarker?.position else {
-            print("locationMarker is nil")
-            return false
-        }
-        infoWindow.spotData = markerData
-        infoWindow.delegate = self
-        // Configure UI properties of info window
-        infoWindow.alpha = 0.9
-        
-        infoWindow.placeAddress.text = markerData?.address
-        infoWindow.placeName.text = markerData?.title
-        infoWindow.center = mapView.projection.point(for: location)
-        infoWindow.center.y = infoWindow.center.y - 10
-        infoWindow.center.x = infoWindow.center.x + 100
-        self.view.addSubview(infoWindow)
+            markerData = marker.userData as! listModel
+            locationMarker = marker
+            infoWindow.removeFromSuperview()
+            infoWindow = loadNiB()
+            guard let location = locationMarker?.position else {
+                print("locationMarker is nil")
+                return false
+            }
+            infoWindow.spotData = markerData
+            infoWindow.delegate = self
+            // Configure UI properties of info window
+            infoWindow.alpha = 0.9
+            
+            infoWindow.placeAddress.text = markerData?.address
+            infoWindow.placeName.text = markerData?.title
+            infoWindow.center = mapView.projection.point(for: location)
+            infoWindow.center.y = infoWindow.center.y - 10
+            infoWindow.center.x = infoWindow.center.x + 100
+            self.view.addSubview(infoWindow)
         }
         return false
     }
@@ -359,5 +357,5 @@ extension StoreListVC
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         infoWindow.removeFromSuperview()
-}
+    }
 }

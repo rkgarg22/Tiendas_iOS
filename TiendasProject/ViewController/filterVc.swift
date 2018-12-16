@@ -27,7 +27,7 @@ class filterVc: UIViewController {
     
     let selectedCollection = Int()
     
-     @IBOutlet weak var departmentCollection: UICollectionView!
+    @IBOutlet weak var departmentCollection: UICollectionView!
     @IBOutlet weak var municialCollection: UICollectionView!
     @IBOutlet weak var burriosCollection: UICollectionView!
     @IBOutlet weak var deptArrow: UIImageView!
@@ -43,14 +43,12 @@ class filterVc: UIViewController {
         isdepindex = -1;
         ismuniindex = -1;
         burrioindex = -1;
-
         
-        
-         self.getlistVc(parentName: "", section: "D")
+        self.getlistVc(parentName: "", section: "D")
     }
     
     
-   
+    
     @IBAction func sectionAction(_ sender: Any)
     {
         let button = sender as! UIButton
@@ -67,7 +65,7 @@ class filterVc: UIViewController {
             self.municialArrow.image = #imageLiteral(resourceName: "rightarrow")
             self.burrioArrow.image = #imageLiteral(resourceName: "rightarrow")
             self.view.layoutIfNeeded()
-
+            
         }
         else
         {
@@ -83,8 +81,8 @@ class filterVc: UIViewController {
     
     @IBAction func tiendasSectonAction(_ sender: UIButton)
     {
-       
-         if (sender.tag == 1)
+        
+        if (sender.tag == 1)
         {
             if (sender.isSelected == false)
             {
@@ -95,18 +93,18 @@ class filterVc: UIViewController {
                     self.getlistVc(parentName: department, section: "M")
                     self.municialCollection .reloadData()
                     self.municiopioHeight.constant = 180;
-                self.departmentHeightconstraint.constant = 0;
+                    self.departmentHeightconstraint.constant = 0;
                     
-            self.bureoHeight.constant = 0;
+                    self.bureoHeight.constant = 0;
                     self.deptArrow.image = #imageLiteral(resourceName: "rightarrow")
                     self.municialArrow.image = #imageLiteral(resourceName: "down-arrow")
                     self.burrioArrow.image = #imageLiteral(resourceName: "rightarrow")
-
                     
-            municiopioHeight.constant = municialCollection.collectionViewLayout.collectionViewContentSize.height
-            self.view.layoutIfNeeded()
+                    
+                    municiopioHeight.constant = municialCollection.collectionViewLayout.collectionViewContentSize.height
+                    self.view.layoutIfNeeded()
                 }
-               
+                
             }
             else
             {
@@ -116,29 +114,29 @@ class filterVc: UIViewController {
                 sender.isSelected = false
                 self.municiopioHeight.constant = 0;
             }
-           
+            
         }
         else
         {
             if (sender.isSelected == false)
             {
-            if (municipio.count > 0)
-            {
-              ResultArray = NSArray()
+                if (municipio.count > 0)
+                {
+                    ResultArray = NSArray()
                     sender.isSelected = true
                     self.getlistVc(parentName: municipio, section: "B")
-                self.burriosCollection.reloadData()
-                self.deptArrow.image = #imageLiteral(resourceName: "rightarrow")
-                self.municialArrow.image = #imageLiteral(resourceName: "rightarrow")
-                self.burrioArrow.image = #imageLiteral(resourceName: "down-arrow")
+                    self.burriosCollection.reloadData()
+                    self.deptArrow.image = #imageLiteral(resourceName: "rightarrow")
+                    self.municialArrow.image = #imageLiteral(resourceName: "rightarrow")
+                    self.burrioArrow.image = #imageLiteral(resourceName: "down-arrow")
                     self.bureoHeight.constant = 180;
-                self.municiopioHeight.constant = 0;
-                self.departmentHeightconstraint.constant = 0;
+                    self.municiopioHeight.constant = 0;
+                    self.departmentHeightconstraint.constant = 0;
                     bureoHeight.constant = burriosCollection.collectionViewLayout.collectionViewContentSize.height
                     self.view.layoutIfNeeded()
-                
-                
-            }
+                    
+                    
+                }
             }
             else
             {
@@ -148,9 +146,7 @@ class filterVc: UIViewController {
                 sender.isSelected = false
                 self.bureoHeight.constant = 0;
             }
-            
-            }
-        
+        }
     }
     
     @IBAction func buscarAction(_ sender: Any)
@@ -160,19 +156,19 @@ class filterVc: UIViewController {
         Alomafire.sharedInstance.burrioString = self.burrio
         
         let Obj =  self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+        Obj.lebelTitle = "TIENDAS"
         self.navigationController?.pushViewController(Obj, animated: true)
-        
     }
 }
-   
+
 extension filterVc : UICollectionViewDelegate,UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! TiendasCollectionViewCell
-      
+        
         if (collectionView.tag == 0)
         {
-              cell.collectionTag.text = self.departmentArray.object(at: indexPath.row) as? String ?? "Data"
+            cell.collectionTag.text = self.departmentArray.object(at: indexPath.row) as? String ?? "Data"
             if (isdepindex == indexPath.row)
             {
                 department = self.departmentArray.object(at: indexPath.row) as? String ?? "Data"
@@ -185,7 +181,7 @@ extension filterVc : UICollectionViewDelegate,UICollectionViewDataSource
         }
         if (collectionView.tag == 1)
         {
-              cell.collectionTag.text = self.ResultArray.object(at: indexPath.row) as? String ?? "Data"
+            cell.collectionTag.text = self.ResultArray.object(at: indexPath.row) as? String ?? "Data"
             if (ismuniindex == indexPath.row)
             {
                 municipio = self.ResultArray.object(at: indexPath.row) as? String ?? "Data"
@@ -198,7 +194,7 @@ extension filterVc : UICollectionViewDelegate,UICollectionViewDataSource
         }
         if (collectionView.tag == 2)
         {
-              cell.collectionTag.text = self.ResultArray.object(at: indexPath.row) as? String ?? "Data"
+            cell.collectionTag.text = self.ResultArray.object(at: indexPath.row) as? String ?? "Data"
             if (burrioindex == indexPath.row)
             {
                 burrio = self.ResultArray.object(at: indexPath.row) as? String ?? "Data"
@@ -217,44 +213,29 @@ extension filterVc : UICollectionViewDelegate,UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         
-        if (collectionView.tag == 0)
-        {
-            
-           return self.departmentArray.count
+        if (collectionView.tag == 0){
+            return self.departmentArray.count
         }
-        else
-        {
-       return ResultArray.count;
+        else{
+            return ResultArray.count;
         }
-//        else if (collectionView.tag == 1)
-//        {
-//            return self.municialArray.count
-//        }
-//        else
-//        {
-//            return self.burriosArray.count
-//        }
     }
     
     // MARK: - UICollectionViewDelegate protocol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        if (collectionView.tag == 0)
-        {
+        if (collectionView.tag == 0){
             ismuniindex = -1;
             burrioindex = -1;
             self.department = departmentArray.object(at: indexPath.row) as? String ?? "Data"
             isdepindex = indexPath.row
-            
         }
-        if (collectionView.tag == 1 )
-        {
+        if (collectionView.tag == 1 ){
             self.municipio = ResultArray.object(at: indexPath.row) as? String ?? "Data"
-             burrioindex = -1;
+            burrioindex = -1;
             ismuniindex = indexPath.row
         }
-        if (collectionView.tag == 2)
-        {
+        if (collectionView.tag == 2){
             self.burrio = ResultArray.object(at: indexPath.row) as? String ?? "Data"
             burrioindex = indexPath.row
             
@@ -292,8 +273,8 @@ extension filterVc
     func getlistVc(parentName : String , section : String)
     {
         
-       
-    if(applicationDelegate.isConnectedToNetwork == true)
+        
+        if(applicationDelegate.isConnectedToNetwork == true)
         {
             self.view.endEditing(true)
             applicationDelegate .showActivityIndicatorView()
@@ -301,7 +282,7 @@ extension filterVc
             var Urlstr = String ()
             Urlstr  = ServiceURL + "filterElement/?parentName=\(parentName)&section=\(section)"
             
-           
+            
             Urlstr = Urlstr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
             Alomafire.sharedInstance.getservice(Urlstr: Urlstr)
             { (Result, error) in
@@ -316,37 +297,37 @@ extension filterVc
                     if Result?.value(forKey: "success") as! Int == 1
                     {
                         self.ResultArray = NSArray()
-                    applicationDelegate .hideActivityIndicatorView()
+                        applicationDelegate .hideActivityIndicatorView()
                         
                         let result = Result?.value(forKey: "result") as! NSArray
                         
                         
                         if (section == "D")
                         {
-                    self.departmentArray = result;
-                  
+                            self.departmentArray = result;
+                            
                         }
                         else if (section == "M")
                         {
                             self.ResultArray = result;
-                        self.municialArray = result;
-                        self.municialCollection .reloadData()
-                        self.municiopioHeight.constant = 180;
-                        self.departmentHeightconstraint.constant = 0;
-                        self.bureoHeight.constant = 0;
-                        self.municiopioHeight.constant = self.municialCollection.collectionViewLayout.collectionViewContentSize.height
-                        self.view.layoutIfNeeded()
+                            self.municialArray = result;
+                            self.municialCollection .reloadData()
+                            self.municiopioHeight.constant = 180;
+                            self.departmentHeightconstraint.constant = 0;
+                            self.bureoHeight.constant = 0;
+                            self.municiopioHeight.constant = self.municialCollection.collectionViewLayout.collectionViewContentSize.height
+                            self.view.layoutIfNeeded()
                             
                         }
                         else if (section == "B")
                         {
                             self.ResultArray = result;
-                        self.burriosArray = result;
-                        self.burriosCollection .reloadData()
+                            self.burriosArray = result;
+                            self.burriosCollection .reloadData()
                             self.burriosCollection .reloadData()
                             self.bureoHeight.constant = 180;
                             self.municiopioHeight.constant = 0;
-                        self.departmentHeightconstraint.constant = 0;
+                            self.departmentHeightconstraint.constant = 0;
                             self.bureoHeight.constant = self.burriosCollection.collectionViewLayout.collectionViewContentSize.height
                             self.view.layoutIfNeeded()
                         }
@@ -370,6 +351,4 @@ extension filterVc
             showAlert(self, message:connectivityMessage , title: appName)
         }
     }
-    
-    
 }
