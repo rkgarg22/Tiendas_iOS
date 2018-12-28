@@ -1564,7 +1564,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAm-Va-JTA" customClass="UIViewCustomClass" customModule="Tiendas" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="349" height="244.5"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKL-OE-NTh" customClass="HeaderView" customModule="Tiendas" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKL-OE-NTh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="349" height="58.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el Departamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aw-pL-JD1">
@@ -1606,11 +1606,6 @@
                                                                     <constraint firstItem="rBQ-Bx-424" firstAttribute="top" secondItem="iKL-OE-NTh" secondAttribute="top" constant="8" id="bXe-S3-9hj"/>
                                                                     <constraint firstAttribute="trailing" secondItem="hSj-tj-gLw" secondAttribute="trailing" constant="20" id="y3F-zn-lXj"/>
                                                                 </constraints>
-                                                                <connections>
-                                                                    <outlet property="arrowDown" destination="hSj-tj-gLw" id="RcO-0b-Kd2"/>
-                                                                    <outlet property="headerDescription" destination="9aw-pL-JD1" id="woB-Wg-gUw"/>
-                                                                    <outlet property="titleLabel" destination="rBQ-Bx-424" id="qUp-j8-TtD"/>
-                                                                </connections>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwq-Gy-0ek" customClass="UIViewCustomClass" customModule="Tiendas" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="66.5" width="339" height="0.0"/>
@@ -1709,7 +1704,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nY8-sJ-ldu" customClass="HeaderView" customModule="Tiendas" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nY8-sJ-ldu">
                                                                 <rect key="frame" x="0.0" y="71.5" width="349" height="58.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el Municipio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMu-Q9-Xuc">
@@ -1753,11 +1748,6 @@
                                                                     <constraint firstAttribute="bottom" secondItem="JPs-0f-R1f" secondAttribute="bottom" id="wNF-tg-psN"/>
                                                                     <constraint firstItem="Dd9-VR-d10" firstAttribute="leading" secondItem="nY8-sJ-ldu" secondAttribute="leading" constant="10" id="zfN-4U-6Du"/>
                                                                 </constraints>
-                                                                <connections>
-                                                                    <outlet property="arrowDown" destination="DHW-jC-EhF" id="Wrt-fg-7tV"/>
-                                                                    <outlet property="headerDescription" destination="QMu-Q9-Xuc" id="GcE-14-tUC"/>
-                                                                    <outlet property="titleLabel" destination="Dd9-VR-d10" id="gn2-cF-MpC"/>
-                                                                </connections>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rf2-Yp-FRW" customClass="UIViewCustomClass" customModule="Tiendas" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="135" width="339" height="0.0"/>
@@ -1856,7 +1846,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48j-Xw-olF" customClass="HeaderView" customModule="Tiendas" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48j-Xw-olF">
                                                                 <rect key="frame" x="0.0" y="140" width="349" height="58.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona el Barrio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sc2-8G-ngt">
@@ -1900,11 +1890,6 @@
                                                                     <constraint firstItem="aTB-Ig-Bpl" firstAttribute="top" secondItem="48j-Xw-olF" secondAttribute="top" constant="8" id="hIB-HF-HGh"/>
                                                                     <constraint firstItem="726-Sc-MVu" firstAttribute="top" secondItem="48j-Xw-olF" secondAttribute="top" id="oaE-hT-GqV"/>
                                                                 </constraints>
-                                                                <connections>
-                                                                    <outlet property="arrowDown" destination="iYb-Yc-9dt" id="Ksc-kK-zRm"/>
-                                                                    <outlet property="headerDescription" destination="sc2-8G-ngt" id="Kdo-xx-EUL"/>
-                                                                    <outlet property="titleLabel" destination="aTB-Ig-Bpl" id="E5V-dc-FAC"/>
-                                                                </connections>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62K-Ja-DlL" customClass="UIViewCustomClass" customModule="Tiendas" customModuleProvider="target">
                                                                 <rect key="frame" x="5" y="204.5" width="339" height="0.0"/>
@@ -2115,6 +2100,9 @@
                         <outlet property="municialArrow" destination="DHW-jC-EhF" id="e3u-1R-BEF"/>
                         <outlet property="municialCollection" destination="GIC-nK-eEL" id="fUL-5t-yqe"/>
                         <outlet property="municiopioHeight" destination="ZlP-cF-FiU" id="zad-e8-rAw"/>
+                        <outlet property="selectBarrio" destination="sc2-8G-ngt" id="sC4-gH-nFq"/>
+                        <outlet property="selectedDepartmentLabel" destination="9aw-pL-JD1" id="eYq-p6-MGu"/>
+                        <outlet property="selectedmunicipio" destination="QMu-Q9-Xuc" id="MLo-Gu-4il"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RG3-7q-bES" userLabel="First Responder" sceneMemberID="firstResponder"/>

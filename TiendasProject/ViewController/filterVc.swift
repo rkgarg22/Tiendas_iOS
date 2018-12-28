@@ -10,7 +10,13 @@ class filterVc: UIViewController {
     @IBOutlet weak var bureoHeight: NSLayoutConstraint!
     
     
+    @IBOutlet weak var selectedDepartmentLabel: UILabel!
+    
+    
+    
+    @IBOutlet weak var selectBarrio: UILabel!
     var department = String()
+    @IBOutlet weak var selectedmunicipio: UILabel!
     var municipio = String()
     var burrio  = String()
     
@@ -32,6 +38,7 @@ class filterVc: UIViewController {
     @IBOutlet weak var burriosCollection: UICollectionView!
     @IBOutlet weak var deptArrow: UIImageView!
     
+    
     @IBOutlet weak var municialArrow: UIImageView!
     
     @IBOutlet weak var burrioArrow: UIImageView!
@@ -43,6 +50,8 @@ class filterVc: UIViewController {
         isdepindex = -1;
         ismuniindex = -1;
         burrioindex = -1;
+        
+        
         
         self.getlistVc(parentName: "", section: "D")
     }
@@ -228,15 +237,19 @@ extension filterVc : UICollectionViewDelegate,UICollectionViewDataSource
             ismuniindex = -1;
             burrioindex = -1;
             self.department = departmentArray.object(at: indexPath.row) as? String ?? "Data"
+            selectedDepartmentLabel.text = self.department
             isdepindex = indexPath.row
         }
         if (collectionView.tag == 1 ){
             self.municipio = ResultArray.object(at: indexPath.row) as? String ?? "Data"
+             selectedmunicipio.text = self.municipio
             burrioindex = -1;
             ismuniindex = indexPath.row
         }
         if (collectionView.tag == 2){
             self.burrio = ResultArray.object(at: indexPath.row) as? String ?? "Data"
+            selectBarrio.text =
+                self.burrio
             burrioindex = indexPath.row
             
         }

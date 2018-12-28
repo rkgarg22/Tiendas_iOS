@@ -8,6 +8,7 @@ class HeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var arrowDown: UIImageView!
     @IBOutlet weak var titleLabel: UILabel?
     
+    @IBOutlet weak var departmentSelection: UILabel!
     @IBOutlet weak var headerDescription: UILabel!
   
     var section: Int = 0

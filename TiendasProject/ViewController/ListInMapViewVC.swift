@@ -121,13 +121,21 @@ class ListInMapViewVC: UIViewController,CLLocationManagerDelegate,CustomCalloutV
         var bounds = GMSCoordinateBounds()
         for model in storeListArray
         {
-            let list :listModel = model as! listModel
+            let listmarker  = model as? listModel
             let marker = GMSMarker()
-            marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(list.latitude)!, longitude: CLLocationDegrees(list.longitude)!)
+            var dLati = 0.0
+            var dLong = 0.0
+            if let strLat = listmarker?.latitude {
+                dLati = Double((strLat as NSString).doubleValue);
+            }
+            if let strLong = listmarker?.longitude {
+                dLong = Double((strLong as NSString).doubleValue);
+            }
+            marker.position = CLLocationCoordinate2D(latitude:  (dLati) , longitude:   (dLong))
             marker.appearAnimation = .pop
             marker.map = self.mapView
             marker.icon = #imageLiteral(resourceName: "MapLogo")
-            marker.userData = list
+            marker.userData = listmarker
         }
         mapView.settings.zoomGestures = true
        // mapView.animate(toViewingAngle: 45)
@@ -235,8 +243,8 @@ extension ListInMapViewVC
                         list.city = resultDic?.value(forKey: "city") as? String ?? ""
                         list.distance = resultDic?.value(forKey: "distance") as! Double
                         list.isNew = resultDic?.value(forKey: "isNew") as? String ?? ""
-                        list.latitude = resultDic?.value(forKey: "latitude") as? String ?? ""
-                        list.longitude = resultDic?.value(forKey: "longitude") as? String ?? ""
+                        list.latitude = resultDic?.value(forKey: "latitude")  as! String
+                        list.longitude = resultDic?.value(forKey: "longitude") as! String
                         self.storeListArray.add(list);
                     }
                     self.loadMarkersFromDB();
