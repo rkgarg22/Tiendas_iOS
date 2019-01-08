@@ -30,13 +30,12 @@ extension BannerVC  : UICollectionViewDelegate,UICollectionViewDataSource,UIColl
         return resultArray.count
     }
     //MARK:- UICollectionViewDelegate protocol
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
-    {
-        let dict = resultArray.object(at: indexPath.row) as? NSDictionary
-        let Obj =  self.storyboard?.instantiateViewController(withIdentifier: "BannerDetailVC") as! BannerDetailVC
-        Obj.link = dict?.value(forKey:"url") as?  String
-        self.navigationController?.pushViewController(Obj, animated: true)
-        print("You selected cell #\(indexPath.item)!")
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+//        let dict = resultArray.object(at: indexPath.row) as? NSDictionary
+//        let Obj =  self.storyboard?.instantiateViewController(withIdentifier: "BannerDetailVC") as! BannerDetailVC
+//        Obj.link = dict?.value(forKey:"url") as?  String
+//        self.navigationController?.pushViewController(Obj, animated: true)
+//        print("You selected cell #\(indexPath.item)!")
     }
 }
 

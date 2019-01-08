@@ -51,8 +51,6 @@ class filterVc: UIViewController {
         ismuniindex = -1;
         burrioindex = -1;
         
-        
-        
         self.getlistVc(parentName: "", section: "D")
     }
     
@@ -109,7 +107,6 @@ class filterVc: UIViewController {
                     self.municialArrow.image = #imageLiteral(resourceName: "down-arrow")
                     self.burrioArrow.image = #imageLiteral(resourceName: "rightarrow")
                     
-                    
                     municiopioHeight.constant = municialCollection.collectionViewLayout.collectionViewContentSize.height
                     self.view.layoutIfNeeded()
                 }
@@ -143,8 +140,6 @@ class filterVc: UIViewController {
                     self.departmentHeightconstraint.constant = 0;
                     bureoHeight.constant = burriosCollection.collectionViewLayout.collectionViewContentSize.height
                     self.view.layoutIfNeeded()
-                    
-                    
                 }
             }
             else
@@ -183,8 +178,7 @@ extension filterVc : UICollectionViewDelegate,UICollectionViewDataSource
                 department = self.departmentArray.object(at: indexPath.row) as? String ?? "Data"
                 cell.cellbackView.backgroundColor = selectColor
             }
-            else
-            {
+            else{
                 cell.cellbackView.backgroundColor = UIColor.clear
             }
         }
@@ -242,7 +236,7 @@ extension filterVc : UICollectionViewDelegate,UICollectionViewDataSource
         }
         if (collectionView.tag == 1 ){
             self.municipio = ResultArray.object(at: indexPath.row) as? String ?? "Data"
-             selectedmunicipio.text = self.municipio
+            selectedmunicipio.text = self.municipio
             burrioindex = -1;
             ismuniindex = indexPath.row
         }
