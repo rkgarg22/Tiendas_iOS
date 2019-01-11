@@ -11,6 +11,9 @@ let listWebservice = "listing/?"
 
 let appName = "Tiendas"
 let connectivityMessage = "La conexión a Internet parece estar fuera de línea"
+let departmentEmptyMessage = "Por favor seleccione cualquier Departamento primero"
+
+let municipioEmptyMessage = "Por favor seleccione cualquier Municipio primero"
 let selectColor: UIColor = UIColor(red: 74/255.0, green: 100/255.0, blue: 114/255.0, alpha: 1.0)
 
 let unselectColor: UIColor = UIColor(red: 1/255.0, green: 90/255.0, blue: 158/255.0, alpha: 1.0)

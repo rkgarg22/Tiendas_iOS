@@ -85,9 +85,14 @@ class DrawRouteVC: UIViewController,GMSMapViewDelegate,CustomCalloutViewDelegate
         marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(applicationDelegate.latitude), longitude: CLLocationDegrees(applicationDelegate.longitude))
         marker.appearAnimation = .pop
         marker.map = self.mapView
-        let camera  = GMSCameraPosition.camera(withLatitude: applicationDelegate.latitude, longitude: applicationDelegate.longitude, zoom: 30)
+        let camera  = GMSCameraPosition.camera(withLatitude: applicationDelegate.latitude, longitude: applicationDelegate.longitude, zoom: 6)
+        //let m = Double
+       // self.mapView.isMyLocationEnabled = true
+        self.mapView.camera = camera
+
         
-        mapView.animate(to: camera)
+
+      //  mapView.animate(to: camera)
         
         
         //ADD DESTINATION...

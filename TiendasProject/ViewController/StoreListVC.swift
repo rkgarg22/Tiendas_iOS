@@ -230,8 +230,11 @@ extension StoreListVC
         marker1.userData = self.selectedmodel
         // Use your location
         mapView.settings.zoomGestures = true
-        let camera  = GMSCameraPosition.camera(withLatitude: applicationDelegate.latitude, longitude: applicationDelegate.longitude, zoom: 17)
-        mapView.animate(to: camera)
+        let camera  = GMSCameraPosition.camera(withLatitude: applicationDelegate.latitude, longitude: applicationDelegate.longitude, zoom: 6)
+       // self.mapView.isMyLocationEnabled = true
+        self.mapView.camera = camera
+
+        //mapView.animate(to: camera)
     }                                                                                                                                
     
 }

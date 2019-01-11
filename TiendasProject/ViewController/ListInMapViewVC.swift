@@ -141,9 +141,11 @@ class ListInMapViewVC: UIViewController,CLLocationManagerDelegate,CustomCalloutV
        // mapView.animate(toViewingAngle: 45)
         
       
-        let camera  = GMSCameraPosition.camera(withLatitude: applicationDelegate.latitude, longitude: applicationDelegate.longitude, zoom: 17.0)
+        let camera  = GMSCameraPosition.camera(withLatitude: applicationDelegate.latitude, longitude: applicationDelegate.longitude, zoom: 6.0)
         
-        
+       // self.mapView.isMyLocationEnabled = true
+        self.mapView.camera = camera
+
         self.mapView?.animate(to: camera)
                // mapView.animate(to: camera)
 

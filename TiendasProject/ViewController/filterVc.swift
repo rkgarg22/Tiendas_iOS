@@ -110,10 +110,14 @@ class filterVc: UIViewController {
                     municiopioHeight.constant = municialCollection.collectionViewLayout.collectionViewContentSize.height
                     self.view.layoutIfNeeded()
                 }
+                else{
+                     showAlert(self, message: departmentEmptyMessage, title: appName)
+                }
                 
             }
             else
             {
+               
                 self.deptArrow.image = #imageLiteral(resourceName: "rightarrow")
                 self.municialArrow.image = #imageLiteral(resourceName: "rightarrow")
                 self.burrioArrow.image = #imageLiteral(resourceName: "rightarrow")
@@ -141,6 +145,9 @@ class filterVc: UIViewController {
                     bureoHeight.constant = burriosCollection.collectionViewLayout.collectionViewContentSize.height
                     self.view.layoutIfNeeded()
                 }
+                else{
+                       showAlert(self, message: municipioEmptyMessage, title: appName)
+                }
             }
             else
             {
@@ -149,6 +156,7 @@ class filterVc: UIViewController {
                 self.burrioArrow.image = #imageLiteral(resourceName: "rightarrow")
                 sender.isSelected = false
                 self.bureoHeight.constant = 0;
+             
             }
         }
     }
