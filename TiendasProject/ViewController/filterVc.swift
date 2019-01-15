@@ -45,23 +45,30 @@ class filterVc: UIViewController {
     
     @IBOutlet weak var buscarButton: UIButtonCustomClass!
     
+    @IBOutlet weak var departmentButton: UIButton!
+    @IBOutlet weak var muncipioButton: UIButton!
+    @IBOutlet weak var bueroButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         isdepindex = -1;
         ismuniindex = -1;
         burrioindex = -1;
-        
         self.getlistVc(parentName: "", section: "D")
     }
     
+    func closeDepartmentSection(){
+        self.deptArrow.image = #imageLiteral(resourceName: "rightarrow")
+        self.municialArrow.image = #imageLiteral(resourceName: "rightarrow")
+        self.burrioArrow.image = #imageLiteral(resourceName: "rightarrow")
+        departmentButton.isSelected = false
+        self.departmentHeightconstraint.constant = 0;
+        self.view.layoutIfNeeded()
+    }
     
-    
-    @IBAction func sectionAction(_ sender: Any)
-    {
-        let button = sender as! UIButton
-        if (button.isSelected == false)
-        {
-            button.isSelected = true
+    @IBAction func sectionAction(_ sender: Any){
+        if (departmentButton.isSelected == false){
+            departmentButton.isSelected = true
             self.getlistVc(parentName: "", section: "D")
             self.departmentCollection .reloadData()
             self.departmentHeightconstraint.constant = 180;
@@ -72,31 +79,37 @@ class filterVc: UIViewController {
             self.municialArrow.image = #imageLiteral(resourceName: "rightarrow")
             self.burrioArrow.image = #imageLiteral(resourceName: "rightarrow")
             self.view.layoutIfNeeded()
-            
         }
-        else
-        {
-            self.deptArrow.image = #imageLiteral(resourceName: "rightarrow")
-            self.municialArrow.image = #imageLiteral(resourceName: "rightarrow")
-            self.burrioArrow.image = #imageLiteral(resourceName: "rightarrow")
-            button.isSelected = false
-            self.departmentHeightconstraint.constant = 0;
+        else{
+            closeDepartmentSection()
         }
-        
-        
+    }
+    
+    func closeMuncipioSection(){
+        self.deptArrow.image = #imageLiteral(resourceName: "rightarrow")
+        self.municialArrow.image = #imageLiteral(resourceName: "rightarrow")
+        self.burrioArrow.image = #imageLiteral(resourceName: "rightarrow")
+        muncipioButton.isSelected = false
+        self.municiopioHeight.constant = 0;
+    }
+    
+    func closeBureoSection(){
+        self.deptArrow.image = #imageLiteral(resourceName: "rightarrow")
+        self.municialArrow.image = #imageLiteral(resourceName: "rightarrow")
+        self.burrioArrow.image = #imageLiteral(resourceName: "rightarrow")
+        bueroButton.isSelected = false
+        self.bureoHeight.constant = 0;
     }
     
     @IBAction func tiendasSectonAction(_ sender: UIButton)
     {
         
-        if (sender.tag == 1)
-        {
-            if (sender.isSelected == false)
-            {
+        if (sender.tag == 1){
+            if (muncipioButton.isSelected == false){
                 if (department.count > 0)
                 {
                     ResultArray = NSArray()
-                    sender.isSelected = true
+                    muncipioButton.isSelected = true
                     self.getlistVc(parentName: department, section: "M")
                     self.municialCollection .reloadData()
                     self.municiopioHeight.constant = 180;
@@ -113,27 +126,19 @@ class filterVc: UIViewController {
                 else{
                      showAlert(self, message: departmentEmptyMessage, title: appName)
                 }
-                
             }
-            else
-            {
-               
-                self.deptArrow.image = #imageLiteral(resourceName: "rightarrow")
-                self.municialArrow.image = #imageLiteral(resourceName: "rightarrow")
-                self.burrioArrow.image = #imageLiteral(resourceName: "rightarrow")
-                sender.isSelected = false
-                self.municiopioHeight.constant = 0;
+            else{
+               closeMuncipioSection()
             }
-            
         }
         else
         {
-            if (sender.isSelected == false)
+            if (bueroButton.isSelected == false)
             {
                 if (municipio.count > 0)
                 {
                     ResultArray = NSArray()
-                    sender.isSelected = true
+                    bueroButton.isSelected = true
                     self.getlistVc(parentName: municipio, section: "B")
                     self.burriosCollection.reloadData()
                     self.deptArrow.image = #imageLiteral(resourceName: "rightarrow")
@@ -149,20 +154,13 @@ class filterVc: UIViewController {
                        showAlert(self, message: municipioEmptyMessage, title: appName)
                 }
             }
-            else
-            {
-                self.deptArrow.image = #imageLiteral(resourceName: "rightarrow")
-                self.municialArrow.image = #imageLiteral(resourceName: "rightarrow")
-                self.burrioArrow.image = #imageLiteral(resourceName: "rightarrow")
-                sender.isSelected = false
-                self.bureoHeight.constant = 0;
-             
+            else{
+                 closeBureoSection()
             }
         }
     }
     
-    @IBAction func buscarAction(_ sender: Any)
-    {
+    @IBAction func buscarAction(_ sender: Any){
         Alomafire.sharedInstance.department = self.department
         Alomafire.sharedInstance.municipio = self.municipio
         Alomafire.sharedInstance.burrioString = self.burrio
@@ -195,11 +193,9 @@ extension filterVc : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! TiendasCollectionViewCell
         
-        if (collectionView.tag == 0)
-        {
+        if (collectionView.tag == 0){
             cell.collectionTag.text = self.departmentArray.object(at: indexPath.row) as? String ?? "Data"
-            if (isdepindex == indexPath.row)
-            {
+            if (isdepindex == indexPath.row){
                 department = self.departmentArray.object(at: indexPath.row) as? String ?? "Data"
                 cell.cellbackView.backgroundColor = selectColor
             }
@@ -207,29 +203,23 @@ extension filterVc : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
                 cell.cellbackView.backgroundColor = UIColor.clear
             }
         }
-        if (collectionView.tag == 1)
-        {
+        if (collectionView.tag == 1){
             cell.collectionTag.text = self.ResultArray.object(at: indexPath.row) as? String ?? "Data"
-            if (ismuniindex == indexPath.row)
-            {
+            if (ismuniindex == indexPath.row){
                 municipio = self.ResultArray.object(at: indexPath.row) as? String ?? "Data"
                 cell.cellbackView.backgroundColor = selectColor
             }
-            else
-            {
+            else{
                 cell.cellbackView.backgroundColor = UIColor.clear
             }
         }
-        if (collectionView.tag == 2)
-        {
+        if (collectionView.tag == 2){
             cell.collectionTag.text = self.ResultArray.object(at: indexPath.row) as? String ?? "Data"
-            if (burrioindex == indexPath.row)
-            {
+            if (burrioindex == indexPath.row){
                 burrio = self.ResultArray.object(at: indexPath.row) as? String ?? "Data"
                 cell.cellbackView.backgroundColor = selectColor
             }
-            else
-            {
+            else{
                 cell.cellbackView.backgroundColor = UIColor.clear
             }
         }
@@ -258,19 +248,21 @@ extension filterVc : UICollectionViewDelegate,UICollectionViewDataSource,UIColle
             self.department = departmentArray.object(at: indexPath.row) as? String ?? "Data"
             selectedDepartmentLabel.text = self.department
             isdepindex = indexPath.row
+            closeDepartmentSection()
         }
         if (collectionView.tag == 1 ){
             self.municipio = ResultArray.object(at: indexPath.row) as? String ?? "Data"
             selectedmunicipio.text = self.municipio
             burrioindex = -1;
             ismuniindex = indexPath.row
+            closeMuncipioSection()
         }
         if (collectionView.tag == 2){
             self.burrio = ResultArray.object(at: indexPath.row) as? String ?? "Data"
             selectBarrio.text =
                 self.burrio
             burrioindex = indexPath.row
-            
+            closeBureoSection()
         }
         self .checkvalid()
         collectionView.reloadData()

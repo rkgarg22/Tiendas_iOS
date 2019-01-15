@@ -2090,13 +2090,16 @@
                     <navigationItem key="navigationItem" id="hLm-tZ-jZk"/>
                     <size key="freeformSize" width="375" height="1500"/>
                     <connections>
+                        <outlet property="bueroButton" destination="726-Sc-MVu" id="ifr-w2-K5S"/>
                         <outlet property="bureoHeight" destination="aVN-EM-nKA" id="tla-Nd-Unv"/>
                         <outlet property="burrioArrow" destination="iYb-Yc-9dt" id="Tc6-fH-OW7"/>
                         <outlet property="burriosCollection" destination="cxa-so-dGk" id="OJS-d1-vI1"/>
                         <outlet property="buscarButton" destination="TN0-Pz-i5v" id="dm5-UU-Dvt"/>
+                        <outlet property="departmentButton" destination="7rw-FQ-rhl" id="9Lu-y4-aN5"/>
                         <outlet property="departmentCollection" destination="Whs-mC-GGX" id="ZEP-k1-tKK"/>
                         <outlet property="departmentHeightconstraint" destination="a6N-ut-07g" id="Rj0-EV-OkB"/>
                         <outlet property="deptArrow" destination="hSj-tj-gLw" id="jKZ-SL-bnA"/>
+                        <outlet property="muncipioButton" destination="JPs-0f-R1f" id="2Xb-Oj-cGM"/>
                         <outlet property="municialArrow" destination="DHW-jC-EhF" id="e3u-1R-BEF"/>
                         <outlet property="municialCollection" destination="GIC-nK-eEL" id="fUL-5t-yqe"/>
                         <outlet property="municiopioHeight" destination="ZlP-cF-FiU" id="zad-e8-rAw"/>
