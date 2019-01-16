@@ -21,15 +21,16 @@ import UIKit
     
     @IBInspectable var shadowColor:UIColor {
         get { return UIColor(cgColor: layer.shadowColor!)}
-        set { layer.shadowColor = hexStringToUIColor(hex: "#000000").cgColor
-              layer.masksToBounds = true
-              layer.shadowOpacity = 0.3
-              layer.shadowOffset = CGSize.zero
-              layer.shadowRadius = 2
-             // layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-              //layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-              layer.shouldRasterize = true
-              layer.rasterizationScale = true ? UIScreen.main.scale : 1
+        set {
+//            layer.shadowColor = hexStringToUIColor(hex: "#000000").cgColor
+//              layer.masksToBounds = true
+//              layer.shadowOpacity = 0.3
+//              layer.shadowOffset = CGSize.zero
+//              layer.shadowRadius = 2
+//             // layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+//              //layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+//              layer.shouldRasterize = true
+//              layer.rasterizationScale = true ? UIScreen.main.scale : 1
         }
     }
     
