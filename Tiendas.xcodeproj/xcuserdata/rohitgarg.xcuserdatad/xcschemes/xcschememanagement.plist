@@ -7,7 +7,25 @@
 		<key>Tiendas.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>18E5E5AA214A477D001E35CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>18E5E5BE214A4780001E35CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>18E5E5C9214A4780001E35CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

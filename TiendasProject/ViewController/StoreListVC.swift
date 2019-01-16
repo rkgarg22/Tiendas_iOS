@@ -124,19 +124,19 @@ extension StoreListVC
     }
     func getlistVc()
     {
-        if(applicationDelegate.isConnectedToNetwork == true)
-        {
+        if(applicationDelegate.isConnectedToNetwork == true){
             self.view.endEditing(true)
             applicationDelegate .showActivityIndicatorView()
             
             var Urlstr = String ()
-            if (applicationDelegate.selectedTab == 1)
-            {
+            if (applicationDelegate.selectedTab == 1){
                 Urlstr  = ServiceURL + "filter/?latitude=\(applicationDelegate.latitude)&longitude=\(applicationDelegate.longitude)&departmento=\(Alomafire.sharedInstance.department)&municipio=\(Alomafire.sharedInstance.municipio)&barrio=\(Alomafire.sharedInstance.burrioString)"
             }
-            else
-            {
+            else{
                 Urlstr  = ServiceURL + "listing/?latitude=\(applicationDelegate.latitude)&longitude=\(applicationDelegate.longitude)"
+                
+                
+                //Urlstr  = ServiceURL + "listing/?latitude=\(6.217660)&longitude=\(-75.564220)"
             }
             Urlstr = Urlstr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
             Alomafire.sharedInstance.getservice(Urlstr: Urlstr)

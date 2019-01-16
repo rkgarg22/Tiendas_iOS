@@ -25,8 +25,7 @@ extension BannerVC  : UICollectionViewDelegate,UICollectionViewDataSource,UIColl
         cell.bannerImg.sd_setImage(with: url, placeholderImage:#imageLiteral(resourceName: "logo"))
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
-    {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return resultArray.count
     }
     //MARK:- UICollectionViewDelegate protocol
