@@ -645,16 +645,16 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="359" height="530"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wmR-B1-4SP">
-                                                            <rect key="frame" x="0.0" y="0.0" width="359" height="530"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wmR-B1-4SP">
+                                                            <rect key="frame" x="3" y="5" width="353" height="520"/>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="wmR-B1-4SP" firstAttribute="leading" secondItem="4oK-d9-Qdi" secondAttribute="leadingMargin" id="25L-cr-Cyd"/>
-                                                    <constraint firstAttribute="trailingMargin" secondItem="wmR-B1-4SP" secondAttribute="trailing" id="Fv3-2Q-jHt"/>
-                                                    <constraint firstItem="wmR-B1-4SP" firstAttribute="top" secondItem="4oK-d9-Qdi" secondAttribute="topMargin" id="Wxb-dL-slU"/>
-                                                    <constraint firstAttribute="bottomMargin" secondItem="wmR-B1-4SP" secondAttribute="bottom" id="w7f-s7-pTF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wmR-B1-4SP" secondAttribute="trailing" constant="3" id="CuJ-64-wW0"/>
+                                                    <constraint firstItem="wmR-B1-4SP" firstAttribute="leading" secondItem="4oK-d9-Qdi" secondAttribute="leading" constant="3" id="OOo-By-2cS"/>
+                                                    <constraint firstItem="wmR-B1-4SP" firstAttribute="top" secondItem="4oK-d9-Qdi" secondAttribute="top" constant="5" id="SMS-tG-4D2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="wmR-B1-4SP" secondAttribute="bottom" constant="5" id="V7J-Vy-bXL"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="bannerImg" destination="wmR-B1-4SP" id="vqA-Vi-fMi"/>
@@ -1637,7 +1637,7 @@
                                                                                             <rect key="frame" x="0.0" y="0.0" width="97" height="48"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Antioquia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8M-EO-S8V">
-                                                                                                    <rect key="frame" x="3" y="16.5" width="91" height="17"/>
+                                                                                                    <rect key="frame" x="3" y="15.5" width="91" height="17"/>
                                                                                                     <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="12"/>
                                                                                                     <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -1779,7 +1779,7 @@
                                                                                             <rect key="frame" x="0.0" y="0.0" width="97" height="48"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Antioquia" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Spb-2b-lNZ">
-                                                                                                    <rect key="frame" x="3" y="16.5" width="91" height="17"/>
+                                                                                                    <rect key="frame" x="3" y="15.5" width="91" height="17"/>
                                                                                                     <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="12"/>
                                                                                                     <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -1921,7 +1921,7 @@
                                                                                             <rect key="frame" x="0.0" y="0.0" width="97" height="48"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Antioquia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eol-SU-d5C">
-                                                                                                    <rect key="frame" x="3" y="16.5" width="91" height="17"/>
+                                                                                                    <rect key="frame" x="3" y="15.5" width="91" height="17"/>
                                                                                                     <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="12"/>
                                                                                                     <color key="textColor" red="0.45882352939999999" green="0.45882352939999999" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                                     <nil key="highlightedColor"/>
