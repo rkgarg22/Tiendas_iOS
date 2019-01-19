@@ -36,6 +36,10 @@ extension BannerVC  : UICollectionViewDelegate,UICollectionViewDataSource,UIColl
 //        self.navigationController?.pushViewController(Obj, animated: true)
 //        print("You selected cell #\(indexPath.item)!")
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: bannerecollectionView.frame.size.width-2, height: bannerecollectionView.frame.size.height-5)
+    }
 }
 
 extension BannerVC

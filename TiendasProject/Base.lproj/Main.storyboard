@@ -640,7 +640,7 @@
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="4oK-d9-Qdi" customClass="TiendasCollectionViewCell" customModule="Tiendas" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.5" width="359" height="530"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="359" height="530"/>
                                                     <autoresizingMask key="autoresizingMask"/>
@@ -651,10 +651,10 @@
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="wmR-B1-4SP" secondAttribute="trailing" constant="3" id="CuJ-64-wW0"/>
-                                                    <constraint firstItem="wmR-B1-4SP" firstAttribute="leading" secondItem="4oK-d9-Qdi" secondAttribute="leading" constant="3" id="OOo-By-2cS"/>
-                                                    <constraint firstItem="wmR-B1-4SP" firstAttribute="top" secondItem="4oK-d9-Qdi" secondAttribute="top" constant="5" id="SMS-tG-4D2"/>
-                                                    <constraint firstAttribute="bottom" secondItem="wmR-B1-4SP" secondAttribute="bottom" constant="5" id="V7J-Vy-bXL"/>
+                                                    <constraint firstItem="wmR-B1-4SP" firstAttribute="leading" secondItem="4oK-d9-Qdi" secondAttribute="leading" constant="3" id="7Oh-1Q-2N0"/>
+                                                    <constraint firstItem="wmR-B1-4SP" firstAttribute="top" secondItem="4oK-d9-Qdi" secondAttribute="top" constant="5" id="Ds0-GR-HFd"/>
+                                                    <constraint firstAttribute="bottom" secondItem="wmR-B1-4SP" secondAttribute="bottom" constant="5" id="Npc-9e-mx9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wmR-B1-4SP" secondAttribute="trailing" constant="3" id="paT-RO-3Pi"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="bannerImg" destination="wmR-B1-4SP" id="vqA-Vi-fMi"/>
