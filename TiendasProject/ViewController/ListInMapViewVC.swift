@@ -240,6 +240,8 @@ extension ListInMapViewVC
                             list.isNew = resultDic?.value(forKey: "isNew") as? String ?? ""
                             list.latitude = resultDic?.value(forKey: "latitude")  as! String
                             list.longitude = resultDic?.value(forKey: "longitude") as! String
+                            list.latitude = list.latitude.replacingOccurrences(of: ",", with: ".")
+                            list.longitude = list.longitude.replacingOccurrences(of: ",", with: ".")
                             self.storeListArray.add(list);
                         }
                         self.loadMarkersFromDB();

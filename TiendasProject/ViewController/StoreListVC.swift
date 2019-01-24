@@ -92,7 +92,7 @@ extension StoreListVC : UITableViewDelegate,UITableViewDataSource
         let list = storeListArray.object(at: indexPath.row) as! listModel
         cell.listTitle.text = list.title
         cell.listAddress.text = list.address
-        cell.listDistance.text = String(format: "%.2f",list.distance)
+        cell.listDistance.text = String(format: "%.2f Km",list.distance)
         if (list.isNew == "no"){
             cell.isnewImg.isHidden = false
         }
@@ -166,6 +166,9 @@ extension StoreListVC
                             list.isNew = resultDic?.value(forKey: "isNew") as? String ?? ""
                             list.latitude = resultDic?.value(forKey: "latitude") as? String ?? ""
                             list.longitude = resultDic?.value(forKey: "longitude") as? String ?? ""
+                            
+                            list.latitude = list.latitude.replacingOccurrences(of: ",", with: ".")
+                            list.longitude = list.longitude.replacingOccurrences(of: ",", with: ".")
                             self.storeListArray.add(list);
                         }
                         self.storeListTableView.reloadData()
@@ -222,6 +225,7 @@ extension StoreListVC
         marker.map = self.mapView
         
         //ADD DESTINATION...
+        if(selectedmodel != nil){
         let marker1 = GMSMarker()
         marker1.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(selectedmodel.latitude)!, longitude: CLLocationDegrees(selectedmodel.longitude)!)
         marker1.appearAnimation = .pop
@@ -230,11 +234,13 @@ extension StoreListVC
         marker1.userData = self.selectedmodel
         // Use your location
         mapView.settings.zoomGestures = true
-        let camera  = GMSCameraPosition.camera(withLatitude: applicationDelegate.latitude, longitude: applicationDelegate.longitude, zoom: 6)
+        let camera  = GMSCameraPosition.camera(withLatitude: applicationDelegate.latitude, longitude: applicationDelegate.longitude, zoom: 16.0)
        // self.mapView.isMyLocationEnabled = true
         self.mapView.camera = camera
-
+            let location = CLLocation(latitude:  CLLocationDegrees(selectedmodel.latitude)!, longitude: CLLocationDegrees(selectedmodel.longitude)!)
+        drawRoute(location: location)
         //mapView.animate(to: camera)
+        }
     }                                                                                                                                
     
 }
@@ -242,7 +248,7 @@ extension StoreListVC
 {
     func drawRoute(location: CLLocation) {
         
-        var directionURL =  "https://maps.googleapis.com/maps/api/directions/json?origin=\(applicationDelegate.latitude),\(applicationDelegate.longitude)&destination=\(location.coordinate.latitude),\(location.coordinate.latitude)&key=AIzaSyAajDW81YlRzoY0PPXBlSUxchAJ7FpBQIw"
+        var directionURL =  "https://maps.googleapis.com/maps/api/directions/json?origin=\(applicationDelegate.latitude),\(applicationDelegate.longitude)&destination=\(location.coordinate.latitude),\(location.coordinate.longitude)&key=AIzaSyAajDW81YlRzoY0PPXBlSUxchAJ7FpBQIw"
         
         //AIzaSyDxSgGQX6jrn4iq6dyIWAKEOTneZ3Z8PtU
         
@@ -281,9 +287,21 @@ extension StoreListVC
                         //--------Route polypoints----------\\
                         let overviewPolyline = (routes["overview_polyline"] as? Dictionary<String,AnyObject>) ?? [:]
                         let polypoints = (overviewPolyline["points"] as? String) ?? ""
-                        let line  = polypoints
-                        let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-                        self.addPolyLine(encodedString: line, coordinate:coordinate , dotCoordinate:dotCoordinate)
+                        let path: GMSPath = GMSPath(fromEncodedPath: polypoints)!
+                        let polyLine = GMSPolyline(path: path)
+                        polyLine.strokeWidth = 3
+                        polyLine.map = self.mapView
+                        
+                        // Customizing polyline
+                        let styles: [Any] = [GMSStrokeStyle.solidColor(polylineColor), GMSStrokeStyle.solidColor(UIColor.clear)]
+                        let lengths: [Any] = [10, 10]
+                        
+                        polyLine.spans = GMSStyleSpans(polyLine.path!, styles as! [GMSStrokeStyle], lengths as! [NSNumber],GMSLengthKind.rhumb)
+                        
+                        
+                       // let line  = polypoints
+                       // let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                       // self.addPolyLine(encodedString: line, coordinate:coordinate , dotCoordinate:dotCoordinate)
                     }
                 }
         }

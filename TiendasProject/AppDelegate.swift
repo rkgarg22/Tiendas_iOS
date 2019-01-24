@@ -115,8 +115,8 @@ UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregrou
         let latestLocation = locations.last!
         print(latestLocation)
         
-       // applicationDelegate.latitude = -75.564220
-       // applicationDelegate.longitude = 6.217660
+        //applicationDelegate.longitude = -75.564220
+        //applicationDelegate.latitude = 6.217660
         
         applicationDelegate.latitude = latestLocation.coordinate.latitude
         applicationDelegate.longitude = latestLocation.coordinate.longitude
