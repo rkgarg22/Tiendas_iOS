@@ -664,10 +664,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Mauricio Villegas (Q7FS9MH74Z)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: KOBA COLOMBIA S A S (SQXH9LJP24)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = SQXH9LJP24;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -687,7 +688,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "d3a908e8-7932-42a7-a93c-39bb9d25a42d";
+				PROVISIONING_PROFILE = "be9776c2-176c-4d0d-945e-d5ab479978f8";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -726,10 +727,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Mauricio Villegas (Q7FS9MH74Z)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: KOBA COLOMBIA S A S (SQXH9LJP24)";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = SQXH9LJP24;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -742,7 +744,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "d3a908e8-7932-42a7-a93c-39bb9d25a42d";
+				PROVISIONING_PROFILE = "be9776c2-176c-4d0d-945e-d5ab479978f8";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -755,19 +757,19 @@
 			baseConfigurationReference = 5B6DDA6EE150D43DA0161BBE /* Pods-Tiendas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Mauricio Villegas (Q7FS9MH74Z)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: KOBA COLOMBIA S A S (SQXH9LJP24)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7Z5AQZ8848;
+				DEVELOPMENT_TEAM = SQXH9LJP24;
 				INFOPLIST_FILE = TiendasProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.Tiendas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.Tiendasd1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d3a908e8-7932-42a7-a93c-39bb9d25a42d";
-				PROVISIONING_PROFILE_SPECIFIER = GEN_DEV_ELISA;
+				PROVISIONING_PROFILE = "be9776c2-176c-4d0d-945e-d5ab479978f8";
+				PROVISIONING_PROFILE_SPECIFIER = D1_DIST;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -778,19 +780,19 @@
 			baseConfigurationReference = FA2F5AB742737E3CE49020A6 /* Pods-Tiendas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Mauricio Villegas (Q7FS9MH74Z)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: KOBA COLOMBIA S A S (SQXH9LJP24)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 7Z5AQZ8848;
+				DEVELOPMENT_TEAM = SQXH9LJP24;
 				INFOPLIST_FILE = TiendasProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.Tiendas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.Tiendasd1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d3a908e8-7932-42a7-a93c-39bb9d25a42d";
-				PROVISIONING_PROFILE_SPECIFIER = GEN_DEV_ELISA;
+				PROVISIONING_PROFILE = "be9776c2-176c-4d0d-945e-d5ab479978f8";
+				PROVISIONING_PROFILE_SPECIFIER = D1_DIST;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -810,7 +812,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.TiendasTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.Tiendasd1Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -832,7 +834,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.TiendasTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.Tiendasd1Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -853,7 +855,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.TiendasUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.Tiendasd1UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -874,7 +876,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.TiendasUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.Tiendasd1UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
