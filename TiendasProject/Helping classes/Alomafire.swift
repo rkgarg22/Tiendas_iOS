@@ -10,6 +10,7 @@ class Alomafire: NSObject
     var department  = String()
     var municipio = String()
     var burrioString = String()
+    var currentStatus = String()
     
     //MARK:- Create singleton object
     class var sharedInstance: Alomafire

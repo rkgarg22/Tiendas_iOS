@@ -19,6 +19,7 @@ class HomeVC: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(HomeVC.methodOfReceivedNotification(notification:)), name: Notification.Name("openshadow"), object: nil)
+        
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController.delegate = self
         pageViewController.dataSource = self
@@ -36,9 +37,26 @@ class HomeVC: UIViewController
         }else{
              self.titleLabelView.text = "CERCA DE MI"
         }
-        
     }
     
+    @IBAction func backAction(_ sender: Any)
+    {
+        switch Alomafire.sharedInstance.currentStatus {
+        case "List":
+    self.navigationController?.popViewController(animated:true)
+            break;
+        case "Map":
+    self.navigationController?.popViewController(animated:true)
+            break;
+        case navigatorStatus.ListViewSelect:
+              NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideView"), object: nil, userInfo:nil)
+            break
+        default:
+    self.navigationController?.popViewController(animated:true)
+
+            break;
+        }
+    }
     @objc func methodOfReceivedNotification(notification: Notification)
     {
         if  notification.userInfo?["text"] as? String == "true"{

@@ -3,6 +3,15 @@ import UIKit
 
 //MARK Google MAP API
 
+
+struct navigatorStatus
+{
+ static let ListViewSelect = "ListViewSelect"
+ static let List = "List"
+ static let Filter = "filter"
+}
+
+
 let googleAPI = "AIzaSyDP7zkzOWlvtKj9g5yTnyx78CLkJydl_oQ"
 
 let ServiceURL = "http://ec2-18-221-191-16.us-east-2.compute.amazonaws.com/api/"

@@ -13,6 +13,26 @@ class BannerVC: UIViewController {
         super.viewDidLoad()
         self .getlistVc()
     }
+    
+    @IBAction func backAction(_ sender: Any)
+    {
+        switch Alomafire.sharedInstance.currentStatus {
+        case "List":
+            self.navigationController?.popViewController(animated:true)
+            break;
+        case "Map":
+            self.navigationController?.popViewController(animated:true)
+            break;
+        case navigatorStatus.ListViewSelect:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideView"), object: nil, userInfo:nil)
+            break
+        default:
+            self.navigationController?.popViewController(animated:true)
+            
+            break;
+        }
+    }
+    
 }
 
 extension BannerVC  : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout

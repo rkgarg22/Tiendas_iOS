@@ -100,8 +100,29 @@ class filterVc: UIViewController {
         bueroButton.isSelected = false
         self.bureoHeight.constant = 0;
     }
+    @IBAction func backAction(_ sender: Any)
+    {
+       // self.tabBarController?.selectedIndex = 0
+        switch Alomafire.sharedInstance.currentStatus {
+        case navigatorStatus.Filter:
+            //self.tabBarController?.selectedIndex = 0
+self.navigationController?.popViewController(animated:true)
+            break;
+        case "List":
+self.navigationController?.popViewController(animated:true)
+        case "Map":
+    self.navigationController?.popViewController(animated:true)
+            break;
+        case navigatorStatus.ListViewSelect:
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "hideView"), object: nil, userInfo:nil)
+            break
+        default:
+            
+            break;
+        }
+    }
     
-    @IBAction func tiendasSectonAction(_ sender: UIButton)
+        @IBAction func tiendasSectonAction(_ sender: UIButton)
     {
         
         if (sender.tag == 1){
@@ -164,7 +185,7 @@ class filterVc: UIViewController {
         Alomafire.sharedInstance.department = self.department
         Alomafire.sharedInstance.municipio = self.municipio
         Alomafire.sharedInstance.burrioString = self.burrio
-        
+        Alomafire.sharedInstance.currentStatus = navigatorStatus.List
         let Obj =  self.storyboard?.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
         Obj.lebelTitle = "TIENDAS"
         self.navigationController?.pushViewController(Obj, animated: true)

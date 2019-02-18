@@ -22,8 +22,17 @@ class StoreListVC: UIViewController,CustomCalloutViewDelegate,GMSMapViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self .getlistVc();
-//        NotificationCenter.default.addObserver(self, selector: #selector(StoreListVC.methodOfReceivedNotification(notification:)), name: Notification.Name("listShow"), object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(StoreListVC.methodOfReceivedNotification(notification:)), name: Notification.Name("hideView"), object: nil)
     }
+    
+    @objc func methodOfReceivedNotification(notification: Notification)
+    {
+        Alomafire.sharedInstance.currentStatus = navigatorStatus.List
+        UIView.transition(with: mapView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.mapView.isHidden = true
+        })
+    }
+    
     
     @IBAction func wazeAction(_ sender: Any)
     {
@@ -45,18 +54,6 @@ class StoreListVC: UIViewController,CustomCalloutViewDelegate,GMSMapViewDelegate
         }
         
     }
-    
-    @objc func methodOfReceivedNotification(notification: Notification)
-    {
-        UIView.transition(with: mapView, duration: 0.5, options: .transitionCrossDissolve, animations: {
-            self.mapView.isHidden = true
-            self.mapView .clear()
-            self.infoWindow = self.loadNiB()
-            self .setupMapView();
-        })
-    }
-    
-    
     
     @IBAction func cancelAction(_ sender: Any)
     {
@@ -106,6 +103,8 @@ extension StoreListVC : UITableViewDelegate,UITableViewDataSource
         return UITableViewAutomaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        Alomafire.sharedInstance.currentStatus = navigatorStatus.ListViewSelect
         selectedmodel = storeListArray.object(at: indexPath.row) as! listModel
         UIView.transition(with: mapView, duration: 0.5, options: .transitionCrossDissolve, animations: {
             self.mapView.isHidden = false
