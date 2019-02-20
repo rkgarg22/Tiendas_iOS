@@ -201,7 +201,6 @@ extension ListInMapViewVC
             applicationDelegate .showActivityIndicatorView()
             
             var Urlstr = String ()
-            let selectedIndex = tabBarController!.selectedIndex
             
             if (applicationDelegate.selectedTab == 1)
             {

@@ -18,18 +18,24 @@ class ViewController: UIViewController {
     @IBAction func tabBarThree(_ sender: Any) {
         let tabBarControllerVcObj = self.storyboard?.instantiateViewController(withIdentifier: "TabBArVc") as! TabBArVC
         tabBarControllerVcObj.selectedIndex = 2
+        applicationDelegate.selectedTab = 2
+
         self.navigationController?.pushViewController(tabBarControllerVcObj, animated: true)
     }
     
     @IBAction func tabBarTwo(_ sender: Any) {
         let tabBarControllerVcObj = self.storyboard?.instantiateViewController(withIdentifier: "TabBArVc") as! TabBArVC
         tabBarControllerVcObj.selectedIndex = 1
+        applicationDelegate.selectedTab = 1
+        
            Alomafire.sharedInstance.currentStatus = navigatorStatus.Filter
         self.navigationController?.pushViewController(tabBarControllerVcObj, animated: true)
     }
     @IBAction func tabBarOneAction(_ sender: Any) {
         let tabBarControllerVcObj = self.storyboard?.instantiateViewController(withIdentifier: "TabBArVc") as! TabBArVC
         Alomafire.sharedInstance.currentStatus = navigatorStatus.List
+        applicationDelegate.selectedTab = 0
+
          tabBarControllerVcObj.selectedIndex = 0
         self.navigationController?.pushViewController(tabBarControllerVcObj, animated: true)
     }

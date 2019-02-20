@@ -7,16 +7,14 @@ target 'Tiendas' do
 
   # Pods for Tiendas
   pod 'Alamofire'
-  pod 'Firebase/Core'
+  
+  pod 'NVActivityIndicatorView'
+  pod 'SDWebImage', '~> 4.0'
+pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'Google'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'NVActivityIndicatorView'
-  pod 'SDWebImage', '~> 4.0'
-
-
-
   target 'TiendasTests' do
     inherit! :search_paths
     # Pods for testing
