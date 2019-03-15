@@ -90,7 +90,7 @@ extension StoreListVC : UITableViewDelegate,UITableViewDataSource
         cell.listTitle.text = list.title
         cell.listAddress.text = list.address
         cell.listDistance.text = String(format: "%.2f Km",list.distance)
-        if (list.isNew == "no"){
+        if (list.isNew == "YES" || list.isNew == "yes" ){
             cell.isnewImg.isHidden = false
         }
         else{

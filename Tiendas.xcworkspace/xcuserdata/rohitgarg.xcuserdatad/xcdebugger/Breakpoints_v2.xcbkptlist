@@ -10,28 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TiendasProject/ViewController/StoreListVC.swift"
-            timestampString = "570040384.250494"
+            timestampString = "574277912.102387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
-            landmarkName = "methodOfReceivedNotification(notification:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TiendasProject/ViewController/HomeVC.swift"
-            timestampString = "566655403.708339"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "wazeAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TiendasProject/ViewController/ListInMapViewVC.swift"
-            timestampString = "570040384.250676"
+            timestampString = "572548064.585411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -54,31 +38,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Tiendas.ListInMapViewVC.mapView(__ObjC.GMSMapView, didTap: __ObjC.GMSMarker) -&gt; Swift.Bool"
+                  symbolName = "Tiendas.ListInMapViewVC.mapView(_: __C.GMSMapView, didTap: __C.GMSMarker) -&gt; Swift.Bool"
                   moduleName = "Tiendas"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/D1/iOSSourceCode/Tiendas_iOS/TiendasProject/ViewController/ListInMapViewVC.swift"
-                  timestampString = "570040313.37326"
+                  timestampString = "574277740.4254"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
                   endingLineNumber = "71"
-                  offsetFromSymbolStart = "1372">
+                  offsetFromSymbolStart = "1761">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Tiendas.ListInMapViewVC.mapView(__ObjC.GMSMapView, didTap: __ObjC.GMSMarker) -&gt; Swift.Bool"
+                  symbolName = "Tiendas.ListInMapViewVC.mapView(_: __C.GMSMapView, didTap: __C.GMSMarker) -&gt; Swift.Bool"
                   moduleName = "Tiendas"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/rohitgarg/Documents/Elisa/D1/iOSSourceCode/Tiendas_iOS/TiendasProject/ViewController/ListInMapViewVC.swift"
-                  timestampString = "570040313.37913"
+                  timestampString = "574277740.42837"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
                   endingLineNumber = "71"
-                  offsetFromSymbolStart = "3956">
+                  offsetFromSymbolStart = "4501">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -90,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TiendasProject/ViewController/ListInMapViewVC.swift"
-            timestampString = "570040384.250774"
+            timestampString = "572548064.592965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "274"
@@ -106,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TiendasProject/ViewController/ListInMapViewVC.swift"
-            timestampString = "570040384.2508399"
+            timestampString = "572548064.593294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "288"
@@ -122,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TiendasProject/ViewController/ListInMapViewVC.swift"
-            timestampString = "570040384.2509"
+            timestampString = "572548064.593604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "297"
@@ -138,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TiendasProject/ViewController/StoreListVC.swift"
-            timestampString = "570040384.250976"
+            timestampString = "574277912.107123"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
-            landmarkName = "drawRoute(location:)"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,12 +138,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TiendasProject/ViewController/StoreListVC.swift"
-            timestampString = "570040384.2510591"
+            timestampString = "574277912.107499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
-            landmarkName = "getlistVc()"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TiendasProject/ViewController/StoreListVC.swift"
+            timestampString = "574277912.107854"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
